@@ -1,3 +1,7 @@
+@php
+    $settings = getSettings();
+    $social_media_link = getSocialMediaLink();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -83,7 +87,7 @@
                 border-radius: 50%;
                 }
         </style>
-        @stack('css')
+        @stack('style')
 
 	</head>
 	<body class="hold-transition sidebar-mini">
@@ -97,7 +101,7 @@
 				<!-- Brand Logo -->
 				<a href="#" class="brand-link">
 					<img src="{{ public_asset('assets/super_admin/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-					<span class="brand-text font-weight-light">Green Home</span>
+					<span class="brand-text font-weight-light">{{ $settings->app_name }}</span>
 				</a>
 				<!-- Sidebar -->
 				<div class="sidebar">
@@ -123,7 +127,7 @@
 			<!-- /.content-wrapper -->
 			<footer class="main-footer">
 
-				<strong>Copyright &copy; 2014-2022 AmazingShop All rights reserved.
+				<strong>Copyright &copy; {{ date('Y') }} {{ $settings->app_name }} All rights reserved.
 			</footer>
 
 		</div>
@@ -151,7 +155,7 @@
 
 		<!-- AdminLTE for demo purposes -->
 		<script src="{{ public_asset('assets/super_admin/js/demo.js') }}"></script>
-        @stack('scripts')
+        @stack('script')
 
         @include("super_admin.layouts.alert-message")
 	</body>

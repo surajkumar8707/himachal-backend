@@ -8,6 +8,7 @@ use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Models\SocialMediaLink;
 use App\Models\PefectTourPackages;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {

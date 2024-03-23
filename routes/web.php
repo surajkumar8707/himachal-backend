@@ -36,6 +36,7 @@ Route::controller(FrontEndController::class)->group(function(){
 // Authentication routes
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
+Route::post('/logout', [LoginController::class, 'signOut'])->name('admin.logout');
 
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function() {

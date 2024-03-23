@@ -18,8 +18,8 @@ class SettingSeeder extends Seeder
 
         // Seed new data
         Setting::create([
-            'app_name' => 'Jim Corbett',
-            'email' => 'jim.corbate@gmail.com',
+            'app_name' => 'Himachal',
+            'email' => 'himachal@gmail.com',
             'whatsapp' => '+91 8707633860',
             'contact' => '+91 8707633860',
             'address' => 'SS 555 Sectod-M Ramnagar, Dehradoon',
