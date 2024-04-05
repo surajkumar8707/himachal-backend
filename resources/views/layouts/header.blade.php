@@ -1,68 +1,42 @@
-<!-- Topbar Start -->
-<div class="container-fluid bg-light pt-3 d-none d-lg-block">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center">
-                    <p><i class="fa fa-envelope mr-2"></i>{{ $settings->email }}</p>
-                    <p class="text-body px-3">|</p>
-                    <p><i class="fa fa-phone-alt mr-2"></i>{{ $settings->contact }}</p>
+<header>
+    <nav class="navbar top-bar navbar-default">
+        <div class="container-fluid">
+            <div class="visible-xs col-xs-12 no-padding mobile-nav">
+                <div class="col-xs-8 no-padding"> <a href='./'> <img
+                            src="https://www.royalorchidhotels.com/images/logo-2.png" class="mob-logo"
+                            alt="Royal Orchid Hotels" /></a> </div>
+                <div class="col-xs-4 p0-sm"> <a href="tel:+91 8041276667" target="_blank" class="phone_icon_mob"
+                        style="display: none;"><i class="fas fa-phone" data-fa-transform="rotate-30"></i></a>
+                    <p class="text-right"> <i class="fa fa-bars property_menu_bar"></i> </p>
                 </div>
             </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-primary px-3" href="{{ $social_media_link->facebook }}">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-primary px-3" href="{{ $social_media_link->twitter }}">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-primary px-3" href="{{ $social_media_link->linkedin }}">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-primary px-3" href="{{ $social_media_link->instagram }}">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-primary pl-3" href="{{ $social_media_link->youTube }}">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
+            <div class="navbar-header hidden-xs">
+                <div class="col-md-12 log hidden-xs"> <a href='./'> <img
+                            src="https://www.royalorchidhotels.com/images/logo-2.png" alt="Regenta Hotels" /></a> </div>
+                <div id="google_translate_element" style="margin: 0 0 0 12px;"></div>
             </div>
+            <ul class="menu"> <a href="#" class="close_btn">X</a>
+                <li><a href='./'>Home</a></li>
+                <li class="mob_hide"> <a href="javascript:void(0);" id="opmenu" data-toggle="modal"
+                        data-target="#menuBox">Destinations
+                    </a> </li>
+                <li id="opmen_mobile"> <a class="findhotel_link" href="javascript:void(0);">Destinations</a>
+                    <div class='sidebar-1'> </div>
+                </li>
+                <li id="opmen_mobileInt"> <a class="findhotel_Intlink" href="javascript:void(0);">International</a>
+                    <div class='sidebar-2'> </div>
+                </li>
+                <li><a href='wow-wedding'>Celebrations</a></li>
+                <li><a href='offers'>offers</a></li>
+                <li><a href='https://bookings.royalorchidhotels.com/property/5731/bookings/manage/'
+                        target="_blank">Manage Booking</a></li>
+                <li><a href='contact-us'>Contact</a></li>
+                <div class="navbar-header mobile_view_social"> <a href="https://www.facebook.com/RoyalOrchidHotels"
+                        target="_blank"><i class="fab fa-facebook-f"></i></a> <a href="https://twitter.com/Royal_Orchid"
+                        target="_blank"><i class="fab fa-twitter"></i></a> <a
+                        href="https://www.instagram.com/royalorchidhotels/" target="_blank"><i
+                            class="fab fa-instagram"></i></a> </div>
+            </ul>
         </div>
-    </div>
-</div>
-<!-- Topbar End -->
-
-
-<!-- Navbar Start -->
-<div class="container-fluid position-relative nav-bar p-0">
-    <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-            <a href="{{ route('home') }}" class="navbar-brand">
-                {{-- <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>ER</h1> --}}
-                <h1 class="m-0 text-primary">{{ $settings->app_name }}</h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                <div class="navbar-nav ml-auto py-0">
-                    <a href="{{ route('home') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
-                    <a href="{{ route('jungle.safari') }}" class="nav-item nav-link {{ request()->is('jungle-safari') ? 'active' : '' }}">Jungle Safari</a>
-                    <a href="{{ route('canter.ride') }}" class="nav-item nav-link {{ request()->is('canter-ride') ? 'active' : '' }}">Canter Ride</a>
-                    <a href="{{ route('resorts') }}" class="nav-item nav-link {{ request()->is('resorts') ? 'active' : '' }}">Resorts</a>
-                    <div class="nav-item dropdown">
-                        <a href="{{ route('home') }}" class="nav-link dropdown-toggle {{ request()->is('school-group', 'destination-wedding', 'coorporate-group') ? 'active' : '' }}" data-toggle="dropdown">Group</a>
-                        <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="{{ route('school.group') }}" class="dropdown-item {{ request()->is('school-group') ? 'active' : '' }}">School Group</a>
-                            <a href="{{ route('destination.wedding') }}" class="dropdown-item {{ request()->is('destination-wedding') ? 'active' : '' }}">Destination Wedding</a>
-                            <a href="{{ route('coorporate.group') }}" class="dropdown-item {{ request()->is('coorporate-group') ? 'active' : '' }}">Corporate Group</a>
-                        </div>
-                    </div>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </div>
-</div>
-<!-- Navbar End -->
+    </nav>
+</header>

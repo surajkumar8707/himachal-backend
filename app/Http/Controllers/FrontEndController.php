@@ -17,7 +17,7 @@ class FrontEndController extends Controller
     public function index(){
         $packages = PefectTourPackages::where('status', 1)->get();
         // dd($packages->toArray());
-        return view('home', compact('packages'));
+        return view('layouts.app', compact('packages'));
     }
 
     /**
