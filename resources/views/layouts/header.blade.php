@@ -11,8 +11,11 @@
                 </div>
             </div>
             <div class="navbar-header hidden-xs">
-                <div class="col-md-12 log hidden-xs"> <a href='./'> <img
-                            src="https://www.royalorchidhotels.com/images/logo-2.png" alt="Regenta Hotels" /></a> </div>
+                <div class="col-md-12 log hidden-xs">
+                    <a href='./'>
+                        {{-- <img src="https://www.royalorchidhotels.com/images/logo-2.png" alt="Regenta Hotels" /> --}}
+                    </a>
+                </div>
                 <div id="google_translate_element" style="margin: 0 0 0 12px;"></div>
             </div>
             <ul class="menu"> <a href="#" class="close_btn">X</a>
