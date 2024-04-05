@@ -1,3 +1,16 @@
+<style>
+    header {
+        min-height: 55px;
+        position: relative;
+        top: 0;
+        left: 0;
+        color: #fff;
+        width: 100%;
+        z-index: 99999;
+        padding: 0;
+        background: #c40b0b;
+    }
+</style>
 <header>
     <nav class="navbar top-bar navbar-default">
         <div class="container-fluid">
