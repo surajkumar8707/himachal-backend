@@ -1,417 +1,473 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="{{ asset('public/assets/frontend/img/carousel-1.jpg') }}" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                            <h1 class="display-3 text-white mb-md-4">Let's Discover The World Together</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
-                        </div>
-                    </div>
+    <div class="carousel_top">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class= "carousel-inner ">
+                <div class= "item active "><a href="https://www.royalorchidhotels.com/offers"><img
+                            onclick="location='https://www.royalorchidhotels.com/offers'"
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1 size"
+                            alt="100-hotel-banner"></a>
                 </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="{{ asset('public/assets/frontend/img/carousel-2.jpg') }}" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                            <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
-                        </div>
-                    </div>
+                <div class= "item"><img
+                        src="https://carouselhotel.com/wp-content/uploads/2023/09/29-Carousel-29.jpg"
+                        alt="Spring-Banner">
+                </div>
+                <div class= "item"><img
+                        src="https://aw-d.tripcdn.com/images/0221e12000b9ze3w96137_R_600_400_R5.webp"
+                        alt="Hampi"></div>
+                <div class= "item"><a href=" "><img onclick="location=' '"
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
+                            alt="Open now"></a></div>
+                <div class= "item"><a href=" "><img onclick="location=' '"
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
+                            alt="Sun-sand-banner"></a></div>
+                <div class= "item"><a href="https://www.royalorchidhotels.com/regenta-kabini-springs-resort/overview"><img
+                            onclick="location='https://www.royalorchidhotels.com/regenta-kabini-springs-resort/overview'"
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
+                            alt="Kabini"></a></div>
+                <div class= "item"><a href="https://www.royalorchidhotels.com/"><img
+                            onclick="location='https://www.royalorchidhotels.com/'"
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
+                            alt="metropole"></a></div>
+                <div class= "item"><a href="https://www.royalorchidhotels.com/driving-holidays"><img
+                            onclick="location='https://www.royalorchidhotels.com/driving-holidays'"
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
+                            alt="Driving Holidays"></a>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-prev-icon mb-n2"></span>
-                </div>
-            </a>
-            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-next-icon mb-n2"></span>
-                </div>
-            </a>
+            <div class="carousel-arrows"> <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <img src="https://www.royalorchidhotels.com/images/arrow_left.png" alt="Royal Orchid Hotel">
+                </a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <img
+                        src="https://www.royalorchidhotels.com/images/arrow_right.png" alt="Royal Orchid Hotel">
+                </a> </div>
+        </div>
+        <div class="banner-text booking_ul_new wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+            <div class="col-md-12 form-group has-feedback"> <a href="#" class="booking_close_btn">X</a>
+                <ul class="booking_ul">
+                    <li> <label>City</label> <select name="BookingEngine$DdlCity" id="BookingEngine_DdlCity"
+                            class="form-control" onchange="sethotel();">
+                            <option value="0">City</option>
+                            <option value="1113">agra</option>
+                            <option value="1">ahmedabad</option>
+                            <option value="1033">ajmer</option>
+                            <option value="1094">ambala</option>
+                            <option value="2">amritsar</option>
+                            <option value="3">bangalore</option>
+                            <option value="1064">belagavi</option>
+                            <option value="1057">bharatpur</option>
+                            <option value="4">bharuch</option>
+                            <option value="1085">bhopal</option>
+                            <option value="1004">bhuj</option>
+                            <option value="1005">chandigarh</option>
+                            <option value="1028">chennai</option>
+                            <option value="1056">dahej</option>
+                            <option value="1034">dehradun</option>
+                            <option value="1082">dharamshala</option>
+                            <option value="1088">digha</option>
+                            <option value="1103">gangtok</option>
+                            <option value="1007">goa</option>
+                            <option value="1098">greater noida</option>
+                            <option value="1092">guhagar</option>
+                            <option value="1075">gurugram</option>
+                            <option value="1009">hampi</option>
+                            <option value="1026">haridwar</option>
+                            <option value="1106">igatpuri</option>
+                            <option value="1039">indore</option>
+                            <option value="1012">jaipur</option>
+                            <option value="1110">jamnagar</option>
+                            <option value="1083">jhansi</option>
+                            <option value="1074">kabini wildlife</option>
+                            <option value="1041">kanpur</option>
+                            <option value="2110">kasauli</option>
+                            <option value="1076">kedarnath</option>
+                            <option value="1100">kolhapur</option>
+                            <option value="1024">kolkata</option>
+                            <option value="1078">ladakh</option>
+                            <option value="1070">lonavala</option>
+                            <option value="1093">lucknow</option>
+                            <option value="1031">ludhiana</option>
+                            <option value="1014">mahabaleshwar</option>
+                            <option value="1062">manali</option>
+                            <option value="1097">mcleod ganj</option>
+                            <option value="1084">mohali</option>
+                            <option value="1069">morbi</option>
+                            <option value="1111">mumbai</option>
+                            <option value="1015">mussoorie</option>
+                            <option value="1016">mysore</option>
+                            <option value="1058">nagpur</option>
+                            <option value="1046">nashik</option>
+                            <option value="1018">navi mumbai</option>
+                            <option value="1096">nellore</option>
+                            <option value="2109">nepal</option>
+                            <option value="1068">noida</option>
+                            <option value="1112">panchkula</option>
+                            <option value="1066">pench</option>
+                            <option value="1087">phagwara</option>
+                            <option value="1019">pune</option>
+                            <option value="1022">rajkot</option>
+                            <option value="1027">ranthambore</option>
+                            <option value="1067">rishikesh</option>
+                            <option value="1107">sakleshpur</option>
+                            <option value="1073">sambalpur</option>
+                            <option value="1071">shimla</option>
+                            <option value="1021">shimoga</option>
+                            <option value="1055">somnath</option>
+                            <option value="1099">sri lanka</option>
+                            <option value="1042">srinagar</option>
+                            <option value="1072">udaipur</option>
+                            <option value="1023">vadodara</option>
+                            <option value="1060">vapi</option>
+                            <option value="1079">varanasi</option>
+                        </select> <input type="hidden" name="BookingEngine$hidCityAbb" id="BookingEngine_hidCityAbb" />
+                    </li>
+                    <li class="drop_hotel"> <label>Hotel</label>
+                        <div class="form-group"> <select name="BookingEngine$DdlHotel" id="BookingEngine_DdlHotel"
+                                class="form-control">
+                                <option value="0">Select Hotel</option>
+                            </select> </div>
+                    </li>
+                    <li> <label>Check In</label>
+                        <div class="form-group"> <input id="dp1" type="text"
+                                class="form-control clickable input-md" readonly placeholder="Arrival"><i
+                                class="far fa-calendar-alt  form-control-feedback"></i> </div>
+                    </li>
+                    <li> <label>Check Out</label>
+                        <div class="form-group"> <input id="dp2" type="text"
+                                class="form-control clickable input-md" readonly placeholder="Departure"><i
+                                class="far fa-calendar-alt  form-control-feedback"></i> </div>
+                    </li>
+                    <li> <label>Rooms</label> <select name="room" id="room" class="form-control">
+                            <option value="0">Rooms</option>
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select> </li>
+                    <li> <label>Adults</label> <select class="form-control" name="adut" id="adut">
+                            <option value="1">Adults</option>
+                            <option value="1">1</option>
+                            <option value="2" selected="selected">2</option>
+                            <option value="3">3</option>
+                        </select> </li>
+                    <li> <label>Children</label> <select class="form-control" id="child">
+                            <option value="0">Children</option>
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select> </li>
+                    <li> <label>Promo Code</label>
+                        <div class="form-group"> <input class="form-control" id="PromoCode" autocomplete="off"
+                                type="text" placeholder="Promo Code"> </div>
+                    </li>
+                    <li> <label></label> <input name="bth" id="bth" value="Book Now"
+                            onclick="return ValidateBookingHotelCorparate();" class="bkbtn" type="button" />
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <!-- Carousel End -->
 
-
-    {{-- <!-- Booking Start -->
-    <div class="container-fluid booking mt-5 pb-5">
-        <div class="container pb-5">
-            <div class="bg-light shadow" style="padding: 30px;">
-                <div class="row align-items-center" style="min-height: 60px;">
-                    <div class="col-md-10">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Destination</option>
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 1</option>
-                                        <option value="3">Destination 1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Duration</option>
-                                        <option value="1">Duration 1</option>
-                                        <option value="2">Duration 1</option>
-                                        <option value="3">Duration 1</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Booking End --> --}}
-
-    <!-- Home Page Instro Start -->
-    <div class="container-fluid my-5">
-        <div class="container mt-5">
-            <div class="text-center mb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Home Page</h6>
-                <h1>Welcome to {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }}</h1>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img class="img-thumbnail" src="{{ public_asset("assets/frontend/img/jim-corbett.jpg") }}" alt="">
-                    </div>
-                    <div class="col-md-6">
-                        <p class="py-2 text-justify" style="text-indent: 50px;">
-                            Welcome to {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }} National Park, your ultimate destination for an unforgettable tour and travel experience! We are a premier platform for all your travel needs, offering a wide array of services and packages for an enriching vacation. Our website is designed with the aim of providing you with the best experience, right from the comfort of your own home.Located in the northern state of Uttarakhand, India, {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }} National Park is a paradise for nature lovers and wildlife enthusiasts. This pristine park is spread over an area of 1,318 square kilometers and is named after the famous hunter turned conservationist, {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }}. The park is home to a diverse range of flora and fauna, making it a must-visit destination for anyone looking to reconnect with nature.Our website is your one-stop solution for all things related to {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }} National Park.
-                        </p>
-
-                        <p class="py-2 text-justify" style="text-indent: 50px;">
-                            At {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }} National Park, we believe in promoting responsible and sustainable tourism. Our team of experienced guides and naturalists ensures that all our tours and activities are conducted in an eco-friendly manner, with utmost respect for the environment. We also offer various community-based programs, which allow visitors to interact with the locals and learn about their way of life.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Home Page Instro end -->
-
-    <!-- Guide Start -->
-    <div class="container-fluid mt-5">
-        <div class="container mt-5">
-            <div class="text-center mb-3">
-                {{-- <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Home Page</h6> --}}
-                <h1>Your Guide to {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }}</h1>
-            </div>
-            <div class="container">
-                <p class="py-2 text-justify" style="text-indent: 50px;line-height:30px;">
-                    Fun fact: {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }} was an Indian-born Brit who was most well-known as a master tiger hunter. Not exactly what we would call conservation today. But back in the early 1900s {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }} tracked man-eating tigers expertly and protected the small villages of Uttar Pradesh. Despite his dubious conservation techniques (at the time there were MANY more tigers in Indian jungles), he was responsible for establishing India’s very first national park (this one) to protect the unique species inside it.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- Guide end -->
-
-
-    <!-- Animal Most like Start -->
-    <div class="container-fluid mt-5">
-        <div class="container mt-5">
-            <div class="text-center mb-3">
-                {{-- <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Home Page</h6> --}}
-                <h1>What Animals Are You Most Likely to See in {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }} ?</h1>
-            </div>
-            <div class="container">
-                <p class="py-2 text-justify" style="text-indent: 30px;line-height:25px;">
-                    Even if you don’t see tigers inside {{ isset(getSettings()->app_name) ? getSettings()->app_name : '' }} you will probably see wild elephants because the park has a huge population. And they are relatively easy to spot since they like to follow the park trails for easier movement. You’ll also probably see tropical birds, chital deer, sambar deer, jackal, mongoose, grey langurs, rhesus macaques, and barking deer.
-                </p>
-
-                <div class="row">
-                    <div class="col-md-4 my-2">
-                        <img class="img-thumbnail" src="{{ public_asset("assets/frontend/img/jim-corbett.jpg") }}" alt="">
-                    </div>
-                    <div class="col-md-4 my-2">
-                        <img class="img-thumbnail" src="{{ public_asset("assets/frontend/img/jim-corbett.jpg") }}" alt="">
-                    </div>
-                    <div class="col-md-4 my-2">
-                        <img class="img-thumbnail" src="{{ public_asset("assets/frontend/img/jim-corbett.jpg") }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Animal Most like end -->
-
-
-    <!-- Service Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Services</h6>
-                <h1>Tours & Travel Services</h1>
-            </div>
+    <div class="container-fluid" id="belowSliderContent">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                        <i class="fa fa-2x fa-route mx-auto mb-4"></i>
-                        <h5 class="mb-2">Travel Guide</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                        <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
-                        <h5 class="mb-2">Ticket Booking</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                        <i class="fa fa-2x fa-hotel mx-auto mb-4"></i>
-                        <h5 class="mb-2">Hotel Booking</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
-                    </div>
-                </div>
+                <h1 class="ash1" style="text-transform: inherit;">Distinctly Warm Indian Hospitality </h1>
+                <span class="Business-Hotels" style="font-size:14px;display:block;margin:10px 0px;"> Business
+                    Hotels | Holiday Destinations | Wildlife Parks | Wedding Destinations | Religious Sites |
+                    Historic Sites </span>
+                <p class="text-center"> Stay, dine and celebrate at 100+ hotels across 65+ locations in India &
+                    Abroad. Discover hotels that have a soul, a reflection of our distinctly warm, Indian
+                    Hospitality. </p>
             </div>
         </div>
     </div>
-    <!-- Service End -->
-
-    {{-- <!-- Packages Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
-                <h1>Pefect Tour Packages</h1>
-            </div>
+    <section class="corporateoffer">
+        <div class="container" style="position:relative">
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="{{ public_asset('assets/frontend/img/package-1.jpg') }}" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="{{ public_asset('assets/frontend/img/package-2.jpg') }}" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="{{ public_asset('assets/frontend/img/package-3.jpg') }}" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="{{ public_asset('assets/frontend/img/package-4.jpg') }}" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="{{ public_asset('assets/frontend/img/package-5.jpg') }}" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="{{ public_asset('assets/frontend/img/package-6.jpg') }}" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Packages End --> --}}
-
-        <!-- Packages Start -->
-        <div class="container-fluid py-5">
-            <div class="container pt-5 pb-3">
-                <div class="text-center mb-3 pb-3">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
-                    <h1>Pefect Tour Packages</h1>
-                </div>
-                <div class="row">
-                    @forelse ($packages as $key => $package)
-                    {{-- @dd($package) --}}
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="package-item bg-white mb-2">
-                            <img class="img-fluid" src="{{ public_asset($package->images) }}" alt="">
-                            <div class="p-4">
-                                <div class="d-flex justify-content-between mb-3">
-                                    {{-- <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small> --}}
-                                    <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>{{ $package->duration }}</small>
-                                    {{-- <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small> --}}
-                                </div>
-                                <a class="h5 text-decoration-none" href="{{ route('package.show', $package->id) }}">{{ $package->name }}</a>
-                                <div class="border-top mt-4 pt-4">
-                                    <div class="d-flex justify-content-between">
-                                        {{-- <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6> --}}
-                                        <h5 class="m-0">{{ $package->price }} <i class="fa fa-rupee-sign  mr-2"></i></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @empty
-
-                    @endforelse
-                </div>
-            </div>
-        </div>
-        <!-- Packages End -->
-
-    <!-- Registration Start -->
-    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <div class="mb-4">
-                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Mega Offer</h6>
-                        <h1 class="text-white"><span class="text-primary">30% OFF</span> For Honeymoon</h1>
-                    </div>
-                    <p class="text-white">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                        dolor</p>
-                    <ul class="list-inline text-white m-0">
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="card border-0">
-                        <div class="card-header bg-primary text-center p-4">
-                            <h1 class="text-white m-0">Sign Up Now</h1>
-                        </div>
-                        <div class="card-body rounded-bottom bg-white p-5">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control p-4" placeholder="Your name" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control p-4" placeholder="Your email" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Select a destination</option>
-                                        <option value="1">destination 1</option>
-                                        <option value="2">destination 1</option>
-                                        <option value="3">destination 1</option>
+                <div class="col-xs-12 col-sm-12">
+                    <p class="h1 ash1">Book <span class="heading-grd"> Direct Offer</span> </p>
+                    <div class="owl-carousel why-b1 owl-theme">
+                        <div class="item">
+                            <div class="col-sm-12 offer-1"> <a href="offers"> <img
+                                        src='https://www.easemytrip.com/images/hotel-img/hotel-deal-for-flyers.png'
+                                        alt='Sun, Sand, and Savings' width="100%" /> </a>
+                                <p class="ofr ofrup">Sun, Sand, and Savings </p>
+                                <p class="ofrdn">20% Discount on Room Bookings. </p> <input type="hidden"
+                                    name="RptCorporateOffer$ctl00$HidOfferID" id="RptCorporateOffer_ctl00_HidOfferID"
+                                    value="290" />
+                                <div class="btnHomeOffer"> <a href="javascript:void(0);"
+                                        onclick="ShowHomeInclusion('290');" class="def-offer">Inclusions </a>
+                                    <select name="RptCorporateOffer$ctl00$Ddhotels" id="RptCorporateOffer_ctl00_Ddhotels"
+                                        onchange="CallChangeCity(this.options[this.selectedIndex].value)">
+                                        <option value="Book Now">Book Now</option>
+                                        <option value="goa">Goa</option>
                                     </select>
                                 </div>
-                                <div>
-                                    <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-12 offer-1"> <a href="offers"> <img
+                                        src='https://5.imimg.com/data5/ANDROID/Default/2023/7/329150763/KZ/KX/DP/4628633/product-jpeg.jpg'
+                                        alt='Score Big' width="100%" /> </a>
+                                <p class="ofr ofrup">Score Big </p>
+                                <p class="ofrdn">Early Access to 100 Hotels in Our Celebration Sale! </p> <input
+                                    type="hidden" name="RptCorporateOffer$ctl01$HidOfferID"
+                                    id="RptCorporateOffer_ctl01_HidOfferID" value="95" />
+                                <div class="btnHomeOffer"> <a href="javascript:void(0);"
+                                        onclick="ShowHomeInclusion('95');" class="def-offer">Inclusions </a>
+                                    <select name="RptCorporateOffer$ctl01$Ddhotels" id="RptCorporateOffer_ctl01_Ddhotels"
+                                        onchange="CallChangeCity(this.options[this.selectedIndex].value)">
+                                        <option value="Book Now">Book Now</option>
+                                        <option value="agra">Agra</option>
+                                        <option value="ahmedabad">Ahmedabad</option>
+                                        <option value="ajmer">Ajmer</option>
+                                        <option value="ambala">Ambala</option>
+                                        <option value="amritsar">Amritsar</option>
+                                        <option value="bangalore">Bangalore</option>
+                                        <option value="belagavi">Belagavi</option>
+                                        <option value="bharatpur">Bharatpur</option>
+                                        <option value="bharuch">Bharuch</option>
+                                        <option value="bhopal">Bhopal</option>
+                                        <option value="bhuj">Bhuj</option>
+                                        <option value="chandigarh">Chandigarh</option>
+                                        <option value="chennai">Chennai</option>
+                                        <option value="dahej">Dahej</option>
+                                        <option value="dehradun">Dehradun</option>
+                                        <option value="dharamshala">Dharamshala</option>
+                                        <option value="digha">Digha</option>
+                                        <option value="gangtok">Gangtok</option>
+                                        <option value="goa">Goa</option>
+                                        <option value="greater noida">Greater Noida</option>
+                                        <option value="guhagar">Guhagar</option>
+                                        <option value="gurugram">Gurugram</option>
+                                        <option value="hampi">Hampi</option>
+                                        <option value="haridwar">Haridwar</option>
+                                        <option value="igatpuri">Igatpuri</option>
+                                        <option value="indore">Indore</option>
+                                        <option value="jaipur">Jaipur</option>
+                                        <option value="jamnagar">Jamnagar</option>
+                                        <option value="jhansi">Jhansi</option>
+                                        <option value="kabini wildlife">Kabini Wildlife</option>
+                                        <option value="kanpur">Kanpur</option>
+                                        <option value="kasauli">Kasauli</option>
+                                        <option value="kedarnath">Kedarnath</option>
+                                        <option value="kolhapur">Kolhapur</option>
+                                        <option value="kolkata">Kolkata</option>
+                                        <option value="lonavala">Lonavala</option>
+                                        <option value="lucknow">Lucknow</option>
+                                        <option value="ludhiana">Ludhiana</option>
+                                        <option value="mahabaleshwar">Mahabaleshwar</option>
+                                        <option value="manali">Manali</option>
+                                        <option value="mcleod ganj">Mcleod Ganj</option>
+                                        <option value="mohali">Mohali</option>
+                                        <option value="morbi">Morbi</option>
+                                        <option value="mumbai">Mumbai</option>
+                                        <option value="mussoorie">Mussoorie</option>
+                                        <option value="mysore">Mysore</option>
+                                        <option value="nagpur">Nagpur</option>
+                                        <option value="nashik">Nashik</option>
+                                        <option value="navi mumbai">Navi Mumbai</option>
+                                        <option value="nellore">Nellore</option>
+                                        <option value="nepal">Nepal</option>
+                                        <option value="noida">Noida</option>
+                                        <option value="panchkula">Panchkula</option>
+                                        <option value="pench">Pench</option>
+                                        <option value="phagwara">Phagwara</option>
+                                        <option value="pune">Pune</option>
+                                        <option value="rajkot">Rajkot</option>
+                                        <option value="ranthambore">Ranthambore</option>
+                                        <option value="rishikesh">Rishikesh</option>
+                                        <option value="sakleshpur">Sakleshpur</option>
+                                        <option value="sambalpur">Sambalpur</option>
+                                        <option value="shimla">Shimla</option>
+                                        <option value="shimoga">Shimoga</option>
+                                        <option value="somnath">Somnath</option>
+                                        <option value="sri lanka">Sri Lanka</option>
+                                        <option value="srinagar">Srinagar</option>
+                                        <option value="udaipur">Udaipur</option>
+                                        <option value="vadodara">Vadodara</option>
+                                        <option value="vapi">Vapi</option>
+                                        <option value="varanasi">Varanasi</option>
+                                    </select>
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-12 offer-1"> <a href="offers"> <img
+                                        src='https://gos3.ibcdn.com/top-1544707659.jpg'
+                                        alt='Deal Of The Hour' width="100%" /> </a>
+                                <p class="ofr ofrup">Deal Of The Hour </p>
+                                <p class="ofrdn">Save up to 20% on Room Bookings Every Hour. </p> <input type="hidden"
+                                    name="RptCorporateOffer$ctl02$HidOfferID" id="RptCorporateOffer_ctl02_HidOfferID"
+                                    value="72" />
+                                <div class="btnHomeOffer"> <a href="javascript:void(0);"
+                                        onclick="ShowHomeInclusion('72');" class="def-offer">Inclusions </a>
+                                    <select name="RptCorporateOffer$ctl02$Ddhotels" id="RptCorporateOffer_ctl02_Ddhotels"
+                                        onchange="CallChangeCity(this.options[this.selectedIndex].value)">
+                                        <option value="Book Now">Book Now</option>
+                                        <option value="agra">Agra</option>
+                                        <option value="ahmedabad">Ahmedabad</option>
+                                        <option value="ajmer">Ajmer</option>
+                                        <option value="ambala">Ambala</option>
+                                        <option value="amritsar">Amritsar</option>
+                                        <option value="bangalore">Bangalore</option>
+                                        <option value="belagavi">Belagavi</option>
+                                        <option value="bharatpur">Bharatpur</option>
+                                        <option value="bharuch">Bharuch</option>
+                                        <option value="bhopal">Bhopal</option>
+                                        <option value="bhuj">Bhuj</option>
+                                        <option value="chandigarh">Chandigarh</option>
+                                        <option value="chennai">Chennai</option>
+                                        <option value="dahej">Dahej</option>
+                                        <option value="dehradun">Dehradun</option>
+                                        <option value="dharamshala">Dharamshala</option>
+                                        <option value="digha">Digha</option>
+                                        <option value="gangtok">Gangtok</option>
+                                        <option value="goa">Goa</option>
+                                        <option value="greater noida">Greater Noida</option>
+                                        <option value="guhagar">Guhagar</option>
+                                        <option value="hampi">Hampi</option>
+                                        <option value="haridwar">Haridwar</option>
+                                        <option value="igatpuri">Igatpuri</option>
+                                        <option value="indore">Indore</option>
+                                        <option value="jaipur">Jaipur</option>
+                                        <option value="jamnagar">Jamnagar</option>
+                                        <option value="jhansi">Jhansi</option>
+                                        <option value="kabini wildlife">Kabini Wildlife</option>
+                                        <option value="kanpur">Kanpur</option>
+                                        <option value="kasauli">Kasauli</option>
+                                        <option value="kolhapur">Kolhapur</option>
+                                        <option value="kolkata">Kolkata</option>
+                                        <option value="lonavala">Lonavala</option>
+                                        <option value="lucknow">Lucknow</option>
+                                        <option value="ludhiana">Ludhiana</option>
+                                        <option value="mahabaleshwar">Mahabaleshwar</option>
+                                        <option value="manali">Manali</option>
+                                        <option value="mcleod ganj">Mcleod Ganj</option>
+                                        <option value="mohali">Mohali</option>
+                                        <option value="morbi">Morbi</option>
+                                        <option value="mumbai">Mumbai</option>
+                                        <option value="mussoorie">Mussoorie</option>
+                                        <option value="mysore">Mysore</option>
+                                        <option value="nagpur">Nagpur</option>
+                                        <option value="nashik">Nashik</option>
+                                        <option value="navi mumbai">Navi Mumbai</option>
+                                        <option value="nellore">Nellore</option>
+                                        <option value="nepal">Nepal</option>
+                                        <option value="noida">Noida</option>
+                                        <option value="panchkula">Panchkula</option>
+                                        <option value="pench">Pench</option>
+                                        <option value="phagwara">Phagwara</option>
+                                        <option value="pune">Pune</option>
+                                        <option value="rajkot">Rajkot</option>
+                                        <option value="ranthambore">Ranthambore</option>
+                                        <option value="rishikesh">Rishikesh</option>
+                                        <option value="sakleshpur">Sakleshpur</option>
+                                        <option value="sambalpur">Sambalpur</option>
+                                        <option value="shimla">Shimla</option>
+                                        <option value="shimoga">Shimoga</option>
+                                        <option value="somnath">Somnath</option>
+                                        <option value="sri lanka">Sri Lanka</option>
+                                        <option value="srinagar">Srinagar</option>
+                                        <option value="udaipur">Udaipur</option>
+                                        <option value="vadodara">Vadodara</option>
+                                        <option value="vapi">Vapi</option>
+                                        <option value="varanasi">Varanasi</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-12 offer-1"> <a href="offers"> <img
+                                        src='https://www.easemytrip.com/images/hotel-img/emtbook-23apr-lp2.png'
+                                        alt='Spring Sale' width="100%" /> </a>
+                                <p class="ofr ofrup">Spring Sale </p>
+                                <p class="ofrdn">Discounts Starting from 15% on Room Bookings. </p> <input type="hidden"
+                                    name="RptCorporateOffer$ctl03$HidOfferID" id="RptCorporateOffer_ctl03_HidOfferID"
+                                    value="100" />
+                                <div class="btnHomeOffer"> <a href="javascript:void(0);"
+                                        onclick="ShowHomeInclusion('100');" class="def-offer">Inclusions </a>
+                                    <select name="RptCorporateOffer$ctl03$Ddhotels" id="RptCorporateOffer_ctl03_Ddhotels"
+                                        onchange="CallChangeCity(this.options[this.selectedIndex].value)">
+                                        <option value="Book Now">Book Now</option>
+                                        <option value="agra">Agra</option>
+                                        <option value="ahmedabad">Ahmedabad</option>
+                                        <option value="ajmer">Ajmer</option>
+                                        <option value="ambala">Ambala</option>
+                                        <option value="amritsar">Amritsar</option>
+                                        <option value="bangalore">Bangalore</option>
+                                        <option value="belagavi">Belagavi</option>
+                                        <option value="bharatpur">Bharatpur</option>
+                                        <option value="bharuch">Bharuch</option>
+                                        <option value="bhopal">Bhopal</option>
+                                        <option value="bhuj">Bhuj</option>
+                                        <option value="chandigarh">Chandigarh</option>
+                                        <option value="chennai">Chennai</option>
+                                        <option value="dahej">Dahej</option>
+                                        <option value="dehradun">Dehradun</option>
+                                        <option value="dharamshala">Dharamshala</option>
+                                        <option value="digha">Digha</option>
+                                        <option value="gangtok">Gangtok</option>
+                                        <option value="goa">Goa</option>
+                                        <option value="greater noida">Greater Noida</option>
+                                        <option value="guhagar">Guhagar</option>
+                                        <option value="gurugram">Gurugram</option>
+                                        <option value="hampi">Hampi</option>
+                                        <option value="haridwar">Haridwar</option>
+                                        <option value="igatpuri">Igatpuri</option>
+                                        <option value="indore">Indore</option>
+                                        <option value="jaipur">Jaipur</option>
+                                        <option value="jamnagar">Jamnagar</option>
+                                        <option value="jhansi">Jhansi</option>
+                                        <option value="kabini wildlife">Kabini Wildlife</option>
+                                        <option value="kanpur">Kanpur</option>
+                                        <option value="kasauli">Kasauli</option>
+                                        <option value="kedarnath">Kedarnath</option>
+                                        <option value="kolhapur">Kolhapur</option>
+                                        <option value="kolkata">Kolkata</option>
+                                        <option value="lonavala">Lonavala</option>
+                                        <option value="lucknow">Lucknow</option>
+                                        <option value="ludhiana">Ludhiana</option>
+                                        <option value="mahabaleshwar">Mahabaleshwar</option>
+                                        <option value="manali">Manali</option>
+                                        <option value="mcleod ganj">Mcleod Ganj</option>
+                                        <option value="mohali">Mohali</option>
+                                        <option value="morbi">Morbi</option>
+                                        <option value="mumbai">Mumbai</option>
+                                        <option value="mussoorie">Mussoorie</option>
+                                        <option value="mysore">Mysore</option>
+                                        <option value="nagpur">Nagpur</option>
+                                        <option value="nashik">Nashik</option>
+                                        <option value="navi mumbai">Navi Mumbai</option>
+                                        <option value="nellore">Nellore</option>
+                                        <option value="nepal">Nepal</option>
+                                        <option value="noida">Noida</option>
+                                        <option value="panchkula">Panchkula</option>
+                                        <option value="pench">Pench</option>
+                                        <option value="phagwara">Phagwara</option>
+                                        <option value="pune">Pune</option>
+                                        <option value="rajkot">Rajkot</option>
+                                        <option value="ranthambore">Ranthambore</option>
+                                        <option value="rishikesh">Rishikesh</option>
+                                        <option value="sakleshpur">Sakleshpur</option>
+                                        <option value="sambalpur">Sambalpur</option>
+                                        <option value="shimla">Shimla</option>
+                                        <option value="shimoga">Shimoga</option>
+                                        <option value="somnath">Somnath</option>
+                                        <option value="sri lanka">Sri Lanka</option>
+                                        <option value="srinagar">Srinagar</option>
+                                        <option value="udaipur">Udaipur</option>
+                                        <option value="vadodara">Vadodara</option>
+                                        <option value="vapi">Vapi</option>
+                                        <option value="varanasi">Varanasi</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Registration End -->
+    </section>
 @endsection

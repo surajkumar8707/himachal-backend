@@ -1,92 +1,82 @@
-{{-- @dd('From footer', $settings, $social_media_link); --}}
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
-    <div class="row pt-5">
-        <div class="col-lg-3 col-md-6 mb-5">
-            <a href="{{ route('home') }}" class="navbar-brand">
-                {{-- <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1> --}}
-                <h1 class="text-primary">{{ $settings->app_name }}</h1>
-            </a>
-            <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
-            <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
-            <div class="d-flex justify-content-start">
-                <a class="btn btn-outline-primary btn-square mr-2" href="{{ $social_media_link->youTube }}"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-outline-primary btn-square mr-2" href="{{ $social_media_link->twitter }}"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-outline-primary btn-square mr-2" href="{{ $social_media_link->facebook }}"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-outline-primary btn-square mr-2" href="{{ $social_media_link->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-outline-primary btn-square" href="{{ $social_media_link->instagram }}"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Our Services</h5>
-            <div class="d-flex flex-column justify-content-start">
-                <a class="text-white-50 mb-2" href="{{ route('about') }}"><i class="fa fa-angle-right mr-2"></i>About</a>
-                <a class="text-white-50 mb-2" href="{{ route('jungle.safari') }}"><i class="fa fa-angle-right mr-2"></i>Jungle Safari</a>
-                <a class="text-white-50 mb-2" href="{{ route('canter.ride') }}"><i class="fa fa-angle-right mr-2"></i>Canter Ride</a>
-                <a class="text-white-50 mb-2" href="{{ route('resorts') }}"><i class="fa fa-angle-right mr-2"></i>Resorts</a>
-                <a class="text-white-50 mb-2" href="{{ route('school.group') }}"><i class="fa fa-angle-right mr-2"></i>School Group</a>
-                <a class="text-white-50 mb-2" href="{{ route('destination.wedding') }}"><i class="fa fa-angle-right mr-2"></i>Destination Wedding</a>
-                <a class="text-white-50" href="{{ route('coorporate.group') }}"><i class="fa fa-angle-right mr-2"></i>Corporate Group</a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Usefull Links</h5>
-            <div class="d-flex flex-column justify-content-start">
-                <a class="text-white-50 mb-2" href="{{ route('about') }}"><i class="fa fa-angle-right mr-2"></i>About</a>
-                <a class="text-white-50 mb-2" href="{{ route('contact') }}"><i class="fa fa-angle-right mr-2"></i>Contact</a>
-                <a class="text-white-50 mb-2" href="{{ route('privacy.policy') }}"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
-                <a class="text-white-50 mb-2" href="{{ route('term.condition') }}"><i class="fa fa-angle-right mr-2"></i>Term Condition</a>
-                <a class="text-white-50 mb-2" href="{{ route('resorts') }}"><i class="fa fa-angle-right mr-2"></i>Resorts</a>
-                <a class="text-white-50 mb-2" href="{{ route('school.group') }}"><i class="fa fa-angle-right mr-2"></i>School Group</a>
-                <a class="text-white-50 mb-2" href="{{ route('destination.wedding') }}"><i class="fa fa-angle-right mr-2"></i>Destination Wedding</a>
-                <a class="text-white-50" href="{{ route('coorporate.group') }}"><i class="fa fa-angle-right mr-2"></i>Coorporate Group</a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contact Us</h5>
-            <p><i class="fa fa-map-marker-alt mr-2"></i>{{ $settings->address }}</p>
-            <p><i class="fa fa-phone-alt mr-2"></i>{{ $settings->contact }}</p>
-            <p><i class="fa fa-envelope mr-2"></i>{{ $settings->email }}</p>
-            <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Newsletter</h6>
-            <div class="w-100">
-                <div class="input-group">
-                    <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary px-3">Sign Up</button>
+<div class="newslatter_section">
+    <div class="container">
+        <footer>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;"> <a href='about' class="prtnr">ABOUT US</a> <a
+                        href='investors' class="prtnr1">INVESTORS</a> <a href='partner-with-us' class="prtnr1">PARTNER WITH
+                        US</a> <a href='royal-orchid-group' class="prtnr caps">Our Team</a>
+                    <!-- <a href='career' class="prtnr1">Careers</a> --> <a
+                        href="http://careers.royalorchidhotels.com/careers/careers/" class="prtnr1">Careers</a> <a
+                        href='feedback' class="prtnr1">FEEDBACK</a> <a href="../contact-us" class="prtnr caps">Contact
+                        Us</a> </div>
+                <div class="col-md-12 mb2" style="text-align: center;"> <a href="http://www.presidencycollege.edu.in/"
+                        target="_blank" class="prtnr1">PRESIDENCY COLLEGE</a> <a href='terms-and-conditions'
+                        class="prtnr1">TERMS & CONDITIONS</a> <a href='privacy-and-policy' class="prtnr1">PRIVACY
+                        POLICY</a> <a href='media' class="prtnr1">Media</a> <a href='blog' class="prtnr1">Blog</a>
+                    <a href='sitemap' class="prtnr1">SITEMAP</a> </div>
+                <div class="col-sm-12">
+                    <div class="footer_brand_wrapper">
+                        <ul class="b_logos_ul1">
+                            <li><a href="/brand/hotel-royal-orchid"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/1.png"
+                                        alt="Royal Orchid Hotels" /></a></li>
+                            <li><a href="/brand/royal-orchid-resort"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/3.png"
+                                        alt="Royal Orchid Suites" /></a></li>
+                            <li><a href="/brand/royal-orchid-central"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/2.png"
+                                        alt="Royal Orchid Central" /></a></li>
+                            <li><a href="/brand/royal-orchid-suites"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/4.png"
+                                        alt="Royal Orchid Resorts" /></a></li>
+                        </ul>
+                        <ul class="b_logos_ul2">
+                            <li><a href="/brand/regenta"> <img src="https://www.royalorchidhotels.com/brand_logos/5.png"
+                                        alt="Regenta" /></a></li>
+                            <li><a href="/brand/regenta-resort"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/7.png"
+                                        alt="Regenta Resorts" /></a></li>
+                            <li><a href="/brand/regenta-central"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/6.png"
+                                        alt="Regenta Central" /></a></li>
+                            <li><a href="/brand/regenta-suites"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/8.png"
+                                        alt="Regenta Suites" /></a></li>
+                            <li><a href="/brand/regenta-place"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/9.png"
+                                        alt="Regenta Place" /></a></li>
+                            <li> <a href="/brand/regenta-inn"> <img
+                                        src="https://www.royalorchidhotels.com/brand_logos/10.png"
+                                        alt="Regenta Inn" /></a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="col-md-7 col-sm-12 text-right text-center-sm">
+                    <div class="social_box row">
+                        <div class="col-md-4 text-left"> <a href="https://www.facebook.com/RoyalOrchidHotels"
+                                target="_blank"><i class="fab fa-facebook-f"></i></a> <a
+                                href="https://www.instagram.com/royalorchidandregentahotels/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a> <a
+                                href="https://www.linkedin.com/company/royal-orchid-hotels/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a> </div>
+                        <div class="col-md-8 p0"> </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12" style="text-align: right;">
+                    <div id="Footer_UpdatePanel2">
+                        <div class="ftr"> <input name="Footer$exampleInputEmail" type="text"
+                                id="Footer_exampleInputEmail" autocomplete="off" class="form-control"
+                                placeholder="Subscribe for updates" /> <input type="button" value="Subscribe"
+                                onclick="return validatesubscription();" class="btn btn-default btn-submit" />
+                            <div id="corrcetemai"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <p class="copryright_footer text-center">Copyright©2024, Royal Orchid & Regenta Hotels.
+                        All Rights Reserved.</p>
+                </div>
             </div>
-        </div>
+        </footer>
     </div>
 </div>
-<div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-    <div class="row">
-        <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-            <p class="m-0 text-white-50">Copyright &copy; <a href="#">Gaurav Tiwari</a>. All Rights Reserved.</a>
-            </p>
-        </div>
-        <div class="col-lg-6 text-center text-md-right">
-            <p class="m-0 text-white-50">Designed by <a href="javascript:;">Gaurav Tiwari</a>
-            </p>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
-
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="{{ asset('public/assets/frontend/lib/easing/easing.min.js') }}"></script>
-<script src="{{ asset('public/assets/frontend/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('public/assets/frontend/lib/tempusdominus/js/moment.min.js') }}"></script>
-<script src="{{ asset('public/assets/frontend/lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
-<script src="{{ asset('public/assets/frontend/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-
-<!-- Contact Javascript File -->
-<script src="{{ asset('public/assets/frontend/mail/jqBootstrapValidation.min.js') }}"></script>
-<script src="{{ asset('public/assets/frontend/mail/contact.js') }}"></script>
-
-<!-- Template Javascript -->
-<script src="{{ asset('public/assets/frontend/js/main.js') }}"></script>
