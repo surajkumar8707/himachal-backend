@@ -16,22 +16,23 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-
-Route::controller(FrontEndController::class)->group(function(){
-    Route::get('/', 'index')->name('home');
-    Route::get('package/{id}','show')->name('package.show');
-    Route::get('/about', 'about')->name('about');
-    Route::get('/contact', 'contact')->name('contact');
-    Route::post('/save-contact', 'saveContact')->name('save.contact');
-    Route::get('/jungle-safari', 'jungleSafari')->name('jungle.safari');
-    Route::get('/canter-ride', 'canterRide')->name('canter.ride');
-    Route::get('/resorts', 'resorts')->name('resorts');
-    Route::get('/school-group', 'schoolGroup')->name('school.group');
-    Route::get('/destination-wedding', 'destinationdWedding')->name('destination.wedding');
-    Route::get('/coorporate-group', 'coorporateGroup')->name('coorporate.group');
-    Route::get('/privacy-policy', 'privacyPolicy')->name('privacy.policy');
-    Route::get('/term-condition', 'termCondition')->name('term.condition');
+// frontend routes
+Route::group(['prefix' => '/'], function () {
+    Route::get('/', [FrontEndController::class, 'index'])->name('home');
+    Route::get('package/{id}', [FrontEndController::class, 'show'])->name('package.show');
+    Route::get('/about', [FrontEndController::class, 'about'])->name('about');
+    Route::get('/contact', [FrontEndController::class, 'contact'])->name('contact');
+    Route::post('/save-contact', [FrontEndController::class, 'saveContact'])->name('save.contact');
+    Route::get('/jungle-safari', [FrontEndController::class, 'jungleSafari'])->name('jungle.safari');
+    Route::get('/canter-ride', [FrontEndController::class, 'canterRide'])->name('canter.ride');
+    Route::get('/resorts', [FrontEndController::class, 'resorts'])->name('resorts');
+    Route::get('/school-group', [FrontEndController::class, 'schoolGroup'])->name('school.group');
+    Route::get('/destination-wedding', [FrontEndController::class, 'destinationdWedding'])->name('destination.wedding');
+    Route::get('/coorporate-group', [FrontEndController::class, 'coorporateGroup'])->name('coorporate.group');
+    Route::get('/privacy-policy', [FrontEndController::class, 'privacyPolicy'])->name('privacy.policy');
+    Route::get('/term-condition', [FrontEndController::class, 'termCondition'])->name('term.condition');
 });
+
 
 // Authentication routes
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -39,7 +40,8 @@ Route::post('/custom-login', [LoginController::class, 'customLogin'])->name('log
 Route::post('/logout', [LoginController::class, 'signOut'])->name('admin.logout');
 
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function() {
+// admin routes
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('change-password', [AdminController::class, 'changePassword'])->name('change.password');
     Route::post('change-password', [AdminController::class, 'updatePassword'])->name('update.password');
@@ -50,7 +52,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
 
     // ---Social Media Links---
     Route::group(['prefix' => 'social-media', 'as' => 'social.media.'], function () {
-        Route::controller(AdminController::class)->group(function() {
+        Route::controller(AdminController::class)->group(function () {
             Route::get("/show", "socialMediaShow")->name("show");
             Route::get("/create", "socialMediaCreate")->name("create");
             Route::post("/storeOrUpdate", "socialMediaStoreOrUpdate")->name("storeOrUpdate");
@@ -58,14 +60,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     });
 
     Route::group(['prefix' => 'app', 'as' => 'app.'], function () {
-        Route::controller(AdminController::class)->group(function() {
+        Route::controller(AdminController::class)->group(function () {
             Route::get("/setting", "appSetting")->name("setting");
             Route::post("/setting-update", "appSettingUpdate")->name("setting.update");
         });
     });
 
     Route::group(['prefix' => 'tour-package', 'as' => 'tour.package.'], function () {
-        Route::controller(AdminController::class)->group(function() {
+        Route::controller(AdminController::class)->group(function () {
             Route::get("/", "tourPackageList")->name("list");
             Route::get("/create", "tourPackageCreate")->name("create");
             Route::post("/store", "tourPackageStore")->name("store");

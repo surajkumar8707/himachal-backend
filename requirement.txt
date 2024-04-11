@@ -1,3 +1,7 @@
+=> Server SSH access
+    command: ssh -p 65002 u702115415@195.35.44.146
+
+=> Requirements
 Home
 About
 Room type
