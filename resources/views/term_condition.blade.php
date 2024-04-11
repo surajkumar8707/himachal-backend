@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Terma and Codition')
+
 @section('content')
     {{-- public\assets\images\about-us.jpg --}}
 

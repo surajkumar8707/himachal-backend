@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Home Page')
+
 @section('content')
     <div class="carousel_top">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
