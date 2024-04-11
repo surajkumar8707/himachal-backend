@@ -32,7 +32,8 @@
                 <div id="google_translate_element" style="margin: 0 0 0 12px;"></div>
             </div>
             <ul class="menu"> <a href="#" class="close_btn">X</a>
-                <li><a href='./'>Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
                 <li class="mob_hide"> <a href="javascript:void(0);" id="opmenu" data-toggle="modal"
                         data-target="#menuBox">Destinations
                     </a> </li>
@@ -42,10 +43,10 @@
                 <li id="opmen_mobileInt"> <a class="findhotel_Intlink" href="javascript:void(0);">International</a>
                     <div class='sidebar-2'> </div>
                 </li>
-                <li><a href='wow-wedding'>Celebrations</a></li>
+                {{-- <li><a href='wow-wedding'>Celebrations</a></li>
                 <li><a href='offers'>offers</a></li>
                 <li><a href='https://bookings.royalorchidhotels.com/property/5731/bookings/manage/'
-                        target="_blank">Manage Booking</a></li>
+                        target="_blank">Manage Booking</a></li> --}}
                 <li><a href='contact-us'>Contact</a></li>
                 <div class="navbar-header mobile_view_social"> <a href="https://www.facebook.com/RoyalOrchidHotels"
                         target="_blank"><i class="fab fa-facebook-f"></i></a> <a href="https://twitter.com/Royal_Orchid"

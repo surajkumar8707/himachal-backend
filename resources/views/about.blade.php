@@ -1,43 +1,49 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Header Start -->
-    <div class="container-fluid page-header">
-        <div class="container">
-            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-4 text-white text-uppercase">About Us</h3>
-                <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="{{ route('home') }}">Home</a></p>
-                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">About Us</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
+    {{-- public\assets\images\about-us.jpg --}}
 
-    <!-- About Us Content Start -->
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2 class="text-primary mb-4">Who We Are</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at ante ac dui gravida dignissim vel nec leo. Nulla sit amet viverra elit. Donec congue porta nulla, vitae pretium odio ultrices non.</p>
-                <p>Nulla facilisi. Phasellus pretium consectetur nisl at eleifend. Morbi sit amet lorem nec risus vestibulum dapibus. Donec in elit in ipsum cursus auctor.</p>
-            </div>
-            <div class="col-lg-6">
-                <img src="path_to_your_image" alt="About Us Image" class="img-fluid">
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-lg-6">
-                <img src="path_to_your_image" alt="Our Mission Image" class="img-fluid">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="text-primary mb-4">Our Mission</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at ante ac dui gravida dignissim vel nec leo. Nulla sit amet viverra elit. Donec congue porta nulla, vitae pretium odio ultrices non.</p>
-                <p>Nulla facilisi. Phasellus pretium consectetur nisl at eleifend. Morbi sit amet lorem nec risus vestibulum dapibus. Donec in elit in ipsum cursus auctor.</p>
+    <section class="career_banner_image">
+        <img src="{{ public_asset('assets/images/about-us.jpg') }}" class="img-responsive" alt="Royal Orchid Hotels About us">
+    </section>
+
+    <div class="container-fluid about_new">
+        <div class="container px-5 mx-5">
+            <div class="container">
+                <h1 class="ash1"> <span itemprop="name">About Us</span> </h1>
+                <p>
+                    Welcome to Hotel Trehan, a distinguished hospitality brand located in the heart of Lucknow, India. With
+                    a
+                    rich legacy spanning over two decades, we are dedicated to offering unparalleled experiences to our
+                    guests.
+                    Established in 2024, our brand has become synonymous with excellence and innovation in the hospitality
+                    industry.
+                </p>
+                <br>
+                <p>
+                    At Hotel Trehan, we cater to both business and leisure travelers seeking refined comfort, exquisite
+                    cuisine,
+                    and authentic Indian hospitality. Our diverse portfolio includes luxurious hotels, elegant resorts, and
+                    charming inns, ensuring that every guest discovers their perfect retreat. Whether you're exploring the
+                    vibrant city of Lucknow, embarking on a cultural journey, or seeking tranquility amidst nature, our
+                    properties provide an unmatched blend of comfort and convenience.
+                </p>
+
+                <br>
+
+                <p>
+                    Situated in the historic city of Lucknow, our hotel embodies the essence of Indian hospitality, blending
+                    modern amenities with traditional charm. Our passionate team is committed to delivering exceptional
+                    guest
+                    experiences, guided by our core values of integrity, excellence, and personalized service.
+                </p>
+
+                <br>
+
+                <p>
+                    Experience the warmth and hospitality of Hotel Trehan, where every stay is a memorable journey.
+                </p>
             </div>
         </div>
     </div>
-    <!-- About Us Content End -->
 @endsection

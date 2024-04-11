@@ -29,8 +29,8 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/school-group', [FrontEndController::class, 'schoolGroup'])->name('school.group');
     Route::get('/destination-wedding', [FrontEndController::class, 'destinationdWedding'])->name('destination.wedding');
     Route::get('/coorporate-group', [FrontEndController::class, 'coorporateGroup'])->name('coorporate.group');
-    Route::get('/privacy-policy', [FrontEndController::class, 'privacyPolicy'])->name('privacy.policy');
-    Route::get('/term-condition', [FrontEndController::class, 'termCondition'])->name('term.condition');
+    Route::get('/privacy-and-policy', [FrontEndController::class, 'privacyPolicy'])->name('privacy.policy');
+    Route::get('/terms-and-conditions', [FrontEndController::class, 'termCondition'])->name('term.condition');
 });
 
 
