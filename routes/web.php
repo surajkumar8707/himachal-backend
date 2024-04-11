@@ -21,7 +21,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/', [FrontEndController::class, 'index'])->name('home');
     Route::get('package/{id}', [FrontEndController::class, 'show'])->name('package.show');
     Route::get('/about', [FrontEndController::class, 'about'])->name('about');
-    Route::get('/contact', [FrontEndController::class, 'contact'])->name('contact');
+    Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact.us');
     Route::post('/save-contact', [FrontEndController::class, 'saveContact'])->name('save.contact');
     Route::get('/jungle-safari', [FrontEndController::class, 'jungleSafari'])->name('jungle.safari');
     Route::get('/canter-ride', [FrontEndController::class, 'canterRide'])->name('canter.ride');

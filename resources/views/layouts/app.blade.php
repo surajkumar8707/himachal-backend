@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta http-equiv="Cache-Control" content="Public" />
     <title>
-        Royal Orchid Hotels | Best Hotels in India | Official Website
+        {{ getSettings()->app_name; }} | @yield('title')
     </title>
     <link href="{{ public_asset('assets/frontend/css/site.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
@@ -21,8 +21,7 @@
     <!-- <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" type="text/css" /> -->
     <meta name="keywords"
         content="management hotels, Hotel Management Company &amp; Services, hotel management companies, Hotel Management Company,  hotel management companies,  hotel groups,  hotel group,  hotel management group,  hotel management groups,  top hotel management companies,  luxury hotel management,  hotel management firms,  hotel management firm,  luxury hotel groups,  hotel management services, 5 star hotel, 5 star hotels in india, top 5 hotels in india,  five star hotel,  five star hotels in india, best hotels in i" />
-    <meta name="description"
-        content="Royal Orchid Hotels - A group of best business &amp; luxury hotels in India. Discover hotels that have a soul, a reflection of our distinctly warm, Indian Hospitality. We manage, franchise and own various hotels across the country. " />
+    <meta name="description" content="Royal Orchid Hotels - A group of best business &amp; luxury hotels in India. Discover hotels that have a soul, a reflection of our distinctly warm, Indian Hospitality. We manage, franchise and own various hotels across the country. " />
 </head>
 
 <body>

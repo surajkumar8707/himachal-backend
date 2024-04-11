@@ -18,11 +18,11 @@ class SettingSeeder extends Seeder
 
         // Seed new data
         Setting::create([
-            'app_name' => 'Himachal',
-            'email' => 'himachal@gmail.com',
+            'app_name' => 'Hotel Trehan',
+            'email' => 'hoteltrehan@gmail.com',
             'whatsapp' => '+91 8707633860',
             'contact' => '+91 8707633860',
-            'address' => 'SS 555 Sectod-M Ramnagar, Dehradoon',
+            'address' => 'Lucknow, India',
             'header_image' => 'assets/images/header-logo.png',
         ]);
     }

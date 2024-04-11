@@ -2,21 +2,18 @@
     <div class="container">
         <footer>
             <div class="row">
-                <div class="col-md-12" style="text-align: center;"> <a href='about' class="prtnr">ABOUT US</a> <a
-                        href='investors' class="prtnr1">INVESTORS</a> <a href='partner-with-us' class="prtnr1">PARTNER WITH
-                        US</a> <a href='royal-orchid-group' class="prtnr caps">Our Team</a>
-                    <!-- <a href='career' class="prtnr1">Careers</a> --> <a
-                        href="http://careers.royalorchidhotels.com/careers/careers/" class="prtnr1">Careers</a> <a
-                        href='feedback' class="prtnr1">FEEDBACK</a> <a href="../contact-us" class="prtnr caps">Contact
-                        Us</a> </div>
-                <div class="col-md-12 mb2" style="text-align: center;"> <a href="http://www.presidencycollege.edu.in/"
-                        target="_blank" class="prtnr1">PRESIDENCY COLLEGE</a> <a href='terms-and-conditions'
-                        class="prtnr1">TERMS & CONDITIONS</a> <a href='privacy-and-policy' class="prtnr1">PRIVACY
-                        POLICY</a> <a href='media' class="prtnr1">Media</a> <a href='blog' class="prtnr1">Blog</a>
-                    <a href='sitemap' class="prtnr1">SITEMAP</a> </div>
+                <div class="col-md-12" style="text-align: center;">
+                    <a href='about' class="prtnr">ABOUT US</a>
+                    <a href='room-type' class="prtnr1">Room type</a>
+                    <a href='{{ route('contact.us') }}' class="prtnr1">Contact Us</a>
+                    <a href='booking' class="prtnr1">Booking</a>
+                    <a href='privacy-and-policy' class="prtnr1">PRIVACY POLICY</a>
+                    <a href='terms-and-conditions' class="prtnr1">TERMS & CONDITIONS</a>
+                    <a href="../contact-us" class="prtnr caps">Contact Us</a>
+                </div>
                 <div class="col-sm-12">
-                    <div class="footer_brand_wrapper">
-                        <ul class="b_logos_ul1">
+                    <div class="footer_brand_wrapper_">
+                        {{-- <ul class="b_logos_ul1">
                             <li><a href="/brand/hotel-royal-orchid"> <img
                                         src="https://www.royalorchidhotels.com/brand_logos/1.png"
                                         alt="Royal Orchid Hotels" /></a></li>
@@ -48,7 +45,7 @@
                             <li> <a href="/brand/regenta-inn"> <img
                                         src="https://www.royalorchidhotels.com/brand_logos/10.png"
                                         alt="Regenta Inn" /></a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12 text-right text-center-sm">

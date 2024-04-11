@@ -45,11 +45,11 @@ class FrontEndController extends Controller
 
     /**
      * Description of your controller function.
-     * @Route : contact
+     * @Route : contact-us
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function contact(){
+    public function contactUs(){
         return view('contact');
     }
 
