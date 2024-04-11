@@ -31,6 +31,8 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/coorporate-group', [FrontEndController::class, 'coorporateGroup'])->name('coorporate.group');
     Route::get('/privacy-and-policy', [FrontEndController::class, 'privacyPolicy'])->name('privacy.policy');
     Route::get('/terms-and-conditions', [FrontEndController::class, 'termCondition'])->name('term.condition');
+    Route::get('/room-type', [FrontEndController::class, 'roomType'])->name('room.type');
+    Route::get('/booking', [FrontEndController::class, 'booking'])->name('booking');
 });
 
 

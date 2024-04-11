@@ -155,4 +155,24 @@ class FrontEndController extends Controller
         return view('term_condition');
     }
 
+    /**
+     * Description of your controller function.
+     * @Route : room-type
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function roomType(){
+        return view('room_type');
+    }
+
+    /**
+     * Description of your controller function.
+     * @Route : booking
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function booking(){
+        return view('booking');
+    }
+
 }
