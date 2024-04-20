@@ -33,6 +33,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/terms-and-conditions', [FrontEndController::class, 'termCondition'])->name('term.condition');
     Route::get('/room-type', [FrontEndController::class, 'roomType'])->name('room.type');
     Route::get('/booking', [FrontEndController::class, 'booking'])->name('booking');
+    Route::post('/booking-store', [FrontEndController::class, 'bookingStore'])->name('submit.booking');
 });
 
 
@@ -51,6 +52,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::get('profile/edit', [AdminController::class, 'editProfile'])->name('edit.profile');
     Route::put('profile-update', [AdminController::class, 'updateProfile'])->name('update.profile');
     Route::get('contacts', [AdminController::class, 'showContacts'])->name('contacts');
+    Route::get('bookings', [AdminController::class, 'bookings'])->name('bookings');
 
     // ---Social Media Links---
     Route::group(['prefix' => 'social-media', 'as' => 'social.media.'], function () {

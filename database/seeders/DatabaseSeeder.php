@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             ContactsTableSeeder::class,
             PefectTourPackagesSeeder::class,
+            RoomTypeSeeder::class,
         ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bookings;
 use App\Models\User;
 use App\Models\Contact;
 use App\Models\Setting;
@@ -252,6 +253,12 @@ class AdminController extends Controller
     }
 
     public function tourPackageDelete($id){
+        $tour_package = PefectTourPackages::find($id);
+    }
+
+    public function bookings(){
+        $bookings = \App\Models\Bookings::get();
+        dd($bookings);
         $tour_package = PefectTourPackages::find($id);
     }
 

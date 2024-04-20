@@ -14,7 +14,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
         $packages = PefectTourPackages::where('status', 1)->get();
         // dd($packages->toArray());
         return view('home', compact('packages'));
@@ -39,7 +40,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function about(){
+    public function about()
+    {
         return view('about');
     }
 
@@ -49,18 +51,20 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function contactUs(){
+    public function contactUs()
+    {
         return view('contact');
     }
 
     /**
-    * This functions stores the contact information
-    * Route Name : save.contact
-    * Route : save-contact
-    * Method : POST
-    * @return \Illuminate\View\View
-    */
-    public function saveContact(Request $request){
+     * This functions stores the contact information
+     * Route Name : save.contact
+     * Route : save-contact
+     * Method : POST
+     * @return \Illuminate\View\View
+     */
+    public function saveContact(Request $request)
+    {
         // dd($request->all());
         $validatedData = $request->validate([
             'name' => 'required',
@@ -81,7 +85,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function jungleSafari(){
+    public function jungleSafari()
+    {
         return view('jungle_safari');
     }
 
@@ -91,7 +96,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function canterRide(){
+    public function canterRide()
+    {
         return view('canter_ride');
     }
 
@@ -101,7 +107,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function resorts(){
+    public function resorts()
+    {
         return view('resorts');
     }
 
@@ -111,7 +118,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function schoolGroup(){
+    public function schoolGroup()
+    {
         return view('school_group');
     }
 
@@ -121,7 +129,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destinationdWedding(){
+    public function destinationdWedding()
+    {
         return view('destinationd_wedding');
     }
 
@@ -131,7 +140,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function coorporateGroup(){
+    public function coorporateGroup()
+    {
         return view('coorporate_group');
     }
 
@@ -141,7 +151,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function privacyPolicy(){
+    public function privacyPolicy()
+    {
         return view('privacy_policy');
     }
 
@@ -151,7 +162,8 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function termCondition(){
+    public function termCondition()
+    {
         return view('term_condition');
     }
 
@@ -161,8 +173,11 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function roomType(){
-        return view('room_type');
+    public function roomType()
+    {
+        $rooms = \App\Models\RoomType::where('status', 1)->orderBy('display_order', 'ASC')->get();
+        // dd(base64_encode('5'),$rooms->toArray());
+        return view('room_type', compact('rooms'));
     }
 
     /**
@@ -171,8 +186,46 @@ class FrontEndController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function booking(){
-        return view('booking');
+    public function booking(Request $request)
+    {
+        $id = NULL;
+        if ($request->room) {
+            $id = base64_decode($request->room);
+        }
+        $rooms = \App\Models\RoomType::where('status', 1)->orderBy('name', 'ASC')->get();
+        // dd($id, $rooms);
+        return view('booking', compact('rooms', 'id'));
     }
 
+    public function bookingStore(Request $request)
+    {
+        // Validate the form data
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required|string',
+            'date' => 'required|date',
+            'rooms' => 'required|integer',
+            'visitors' => 'required|integer',
+            'room_type_id' => 'required|exists:room_types,id',
+        ]);
+
+        // Create a new booking instance
+        $booking = new \App\Models\Bookings();
+        $booking->name = $validatedData['name'];
+        $booking->email = $validatedData['email'];
+        $booking->phone = $validatedData['phone'];
+        $booking->date = $validatedData['date'];
+        $booking->rooms = $validatedData['rooms'];
+        $booking->visitors = $validatedData['visitors'];
+        $booking->room_type_id = $validatedData['room_type_id'];
+
+        // Save the booking to the database
+        $booking->save();
+
+        // dd($request, $booking);
+
+        // Redirect back with success message
+        return redirect()->route('home')->with('success', 'Booking has been successfully submitted.');
+    }
 }
