@@ -21,77 +21,72 @@
     <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <style>
-        .show-message {
-            position: absolute;
-            z-index: 999;
-            width: 50%;
-            right: 2px;
-            top: 20%;
-            opacity: 0.8;
-        }
-
-        .switch {
-            position: relative;
+        /* Slider Container */
+        .slider-container {
             display: inline-block;
-            width: 30px;
-            height: 17px;
+            position: relative;
+            width: 48px;
+            height: 30px;
         }
 
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
+        /* Checkbox Input */
+        .checkbox {
+            display: none;
         }
 
+        /* Slider Background */
         .slider {
             position: absolute;
             cursor: pointer;
-            top: 0;
+            top: 0px;
             left: 0;
             right: 0;
             bottom: 0;
             background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
+            border-radius: 20px;
+            transition: background-color 0.4s;
         }
 
-        .slider:before {
+        /* Slider Button */
+        .slider::before {
             position: absolute;
             content: "";
-            height: 13px;
-            width: 13px;
-            left: 4px;
-            bottom: 2px;
+            height: 16px;
+            width: 16px;
+            left: 3px;
+            bottom: 3px;
             background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
+            border-radius: 50%;
+            transition: transform 0.4s;
         }
 
-        input:checked+.slider {
+        /* Checked State */
+        .checkbox:checked+.slider {
             background-color: #2196F3;
         }
 
-        input:focus+.slider {
-            box-shadow: 0 0 1px #2196F3;
+        /* Checked State Button Position */
+        .checkbox:checked+.slider::before {
+            transform: translateX(26px);
         }
 
-        input:checked+.slider:before {
-            -webkit-transform: translateX(13px);
-            -ms-transform: translateX(13px);
-            transform: translateX(13px);
-        }
+        /* Additional Styles for Responsiveness */
+        @media (max-width: 480px) {
+            .slider-container {
+                width: 40px;
+                height: 24px;
+            }
 
-        /* Rounded sliders */
-        .slider.round {
-            border-radius: 17px;
-        }
+            .slider {
+                border-radius: 12px;
+            }
 
-        .slider.round:before {
-            border-radius: 50%;
-        }
-
-        [class*=sidebar-dark-] {
-            background-color: #364b60;
+            .slider::before {
+                height: 20px;
+                width: 20px;
+                left: 2px;
+                bottom: 2px;
+            }
         }
     </style>
     @stack('style')

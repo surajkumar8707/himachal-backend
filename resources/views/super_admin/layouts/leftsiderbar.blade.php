@@ -14,6 +14,18 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link @active(['admin.bookings']) active @endactive" href="{{ route('admin.bookings') }}">
+                <i class="fas fa-fw fa-address-book"></i>
+                <span>Bookings</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @active(['admin.room.type.list', 'admin.room.type.create', 'admin.room.type.edit', 'admin.room.type.show']) active @endactive" href="{{ route('admin.room.type.list') }}">
+                <i class="fas fa-fw fa-address-book"></i>
+                <span>Room Type</span></a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link @active(['admin.social.media.show', 'admin.social.media.create', 'admin.social.media.storeOrUpdate']) active @endactive" href="{{ route('admin.social.media.show') }}">
                 <i class="fas fa-fw fa-share-alt"></i>
                 <span>Social Media</span></a>

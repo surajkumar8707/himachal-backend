@@ -38,6 +38,14 @@ Route::group(['prefix' => '/'], function () {
 
 
 // Authentication routes
+Route::get('/admin', function(){
+    return redirect()->route('login');
+});
+
+Route::get('/admin/login', function(){
+    return redirect()->route('login');
+});
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
 Route::post('/logout', [LoginController::class, 'signOut'])->name('admin.logout');
@@ -70,15 +78,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         });
     });
 
-    Route::group(['prefix' => 'tour-package', 'as' => 'tour.package.'], function () {
+    Route::group(['prefix' => 'room-type', 'as' => 'room.type.'], function () {
         Route::controller(AdminController::class)->group(function () {
-            Route::get("/", "tourPackageList")->name("list");
-            Route::get("/create", "tourPackageCreate")->name("create");
-            Route::post("/store", "tourPackageStore")->name("store");
-            Route::get("/edit/{id}", "tourPackageEdit")->name("edit");
-            Route::post("/update/{id}", "tourPackageUpdate")->name("update");
-            Route::get("/delete/{id}", "tourPackageDelete")->name("delete");
-            Route::get("/show/{id}", "tourPackageShow")->name("show");
+            Route::get("/", "roomTypeList")->name("list");
+            Route::get("/create", "roomTypeCreate")->name("create");
+            Route::post("/store", "roomTypeStore")->name("store");
+            Route::get("/edit/{id}", "roomTypeEdit")->name("edit");
+            Route::post("/update/{id}", "roomTypeUpdate")->name("update");
+            Route::get("/delete/{id}", "roomTypeDelete")->name("delete");
+            Route::get("/show/{id}", "roomTypeShow")->name("show");
         });
     });
     // Add other admin routes here...
