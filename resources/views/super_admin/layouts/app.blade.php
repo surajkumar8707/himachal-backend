@@ -89,7 +89,7 @@
             }
         }
     </style>
-    @stack('style')
+     @stack('style')
 
 </head>
 

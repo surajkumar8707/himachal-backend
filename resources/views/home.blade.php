@@ -6,28 +6,38 @@
     <div class="carousel_top">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class= "carousel-inner ">
-                <div class= "item active "><a href="https://www.royalorchidhotels.com/offers"><img
-                            onclick="location='https://www.royalorchidhotels.com/offers'"
+                <div class= "item active ">
+                    <a href="javascript:;">
+                        <img onclick="javascript:;"
                             src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1 size"
-                            alt="100-hotel-banner"></a>
+                            alt="100-hotel-banner">
+                    </a>
                 </div>
-                <div class= "item"><img
-                        src="https://carouselhotel.com/wp-content/uploads/2023/09/29-Carousel-29.jpg"
-                        alt="Spring-Banner">
+                <div class= "item">
+                    <img src="https://carouselhotel.com/wp-content/uploads/2023/09/29-Carousel-29.jpg" alt="Spring-Banner">
                 </div>
-                <div class= "item"><img
-                        src="https://aw-d.tripcdn.com/images/0221e12000b9ze3w96137_R_600_400_R5.webp"
-                        alt="Hampi"></div>
-                <div class= "item"><a href=" "><img onclick="location=' '"
+                <div class="item">
+                    <img src="https://aw-d.tripcdn.com/images/0221e12000b9ze3w96137_R_600_400_R5.webp" alt="Hampi">
+                </div>
+                <div class= "item">
+                    <a href="">
+                        <img onclick="javascript:;"
                             src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
-                            alt="Open now"></a></div>
-                <div class= "item"><a href=" "><img onclick="location=' '"
+                            alt="Open now">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href=" ">
+                        <img onclick="javascript:;"
                             src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
-                            alt="Sun-sand-banner"></a></div>
-                <div class= "item"><a href="https://www.royalorchidhotels.com/regenta-kabini-springs-resort/overview"><img
-                            onclick="location='https://www.royalorchidhotels.com/regenta-kabini-springs-resort/overview'"
-                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
-                            alt="Kabini"></a></div>
+                            alt="Sun-sand-banner">
+                    </a>
+                </div>
+                <div class= "item">
+                    <a href="https://www.royalorchidhotels.com/regenta-kabini-springs-resort/overview">
+                        <img onclick="https://www.royalorchidhotels.com/regenta-kabini-springs-resort/overview" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1" alt="Kabini">
+                        </a>
+                    </div>
                 <div class= "item"><a href="https://www.royalorchidhotels.com/"><img
                             onclick="location='https://www.royalorchidhotels.com/'"
                             src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
@@ -297,8 +307,8 @@
                         </div>
                         <div class="item">
                             <div class="col-sm-12 offer-1"> <a href="offers"> <img
-                                        src='https://gos3.ibcdn.com/top-1544707659.jpg'
-                                        alt='Deal Of The Hour' width="100%" /> </a>
+                                        src='https://gos3.ibcdn.com/top-1544707659.jpg' alt='Deal Of The Hour'
+                                        width="100%" /> </a>
                                 <p class="ofr ofrup">Deal Of The Hour </p>
                                 <p class="ofrdn">Save up to 20% on Room Bookings Every Hour. </p> <input type="hidden"
                                     name="RptCorporateOffer$ctl02$HidOfferID" id="RptCorporateOffer_ctl02_HidOfferID"
