@@ -13,49 +13,12 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="footer_brand_wrapper_">
-                        {{-- <ul class="b_logos_ul1">
-                            <li><a href="/brand/hotel-royal-orchid"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/1.png"
-                                        alt="Royal Orchid Hotels" /></a></li>
-                            <li><a href="/brand/royal-orchid-resort"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/3.png"
-                                        alt="Royal Orchid Suites" /></a></li>
-                            <li><a href="/brand/royal-orchid-central"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/2.png"
-                                        alt="Royal Orchid Central" /></a></li>
-                            <li><a href="/brand/royal-orchid-suites"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/4.png"
-                                        alt="Royal Orchid Resorts" /></a></li>
-                        </ul>
-                        <ul class="b_logos_ul2">
-                            <li><a href="/brand/regenta"> <img src="https://www.royalorchidhotels.com/brand_logos/5.png"
-                                        alt="Regenta" /></a></li>
-                            <li><a href="/brand/regenta-resort"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/7.png"
-                                        alt="Regenta Resorts" /></a></li>
-                            <li><a href="/brand/regenta-central"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/6.png"
-                                        alt="Regenta Central" /></a></li>
-                            <li><a href="/brand/regenta-suites"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/8.png"
-                                        alt="Regenta Suites" /></a></li>
-                            <li><a href="/brand/regenta-place"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/9.png"
-                                        alt="Regenta Place" /></a></li>
-                            <li> <a href="/brand/regenta-inn"> <img
-                                        src="https://www.royalorchidhotels.com/brand_logos/10.png"
-                                        alt="Regenta Inn" /></a></li>
-                        </ul> --}}
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12 text-right text-center-sm">
                     <div class="social_box row">
-                        <div class="col-md-4 text-left"> <a href="https://www.facebook.com/RoyalOrchidHotels"
-                                target="_blank"><i class="fab fa-facebook-f"></i></a> <a
-                                href="https://www.instagram.com/royalorchidandregentahotels/" target="_blank"><i
-                                    class="fab fa-instagram"></i></a> <a
-                                href="https://www.linkedin.com/company/royal-orchid-hotels/" target="_blank"><i
-                                    class="fab fa-linkedin"></i></a> </div>
+                        <div class="col-md-4 text-left"> <a href="#"
+                                target="_blank"><i class="fab fa-facebook-f"></i></a> <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a> </div>
                         <div class="col-md-8 p0"> </div>
                     </div>
                 </div>
@@ -70,7 +33,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <p class="copryright_footer text-center">Copyright©2024, Royal Orchid & Regenta Hotels.
+                    <p class="copryright_footer text-center">Copyright&copy;{{ date('Y').','.getSettings()->app_name }}.
                         All Rights Reserved.</p>
                 </div>
             </div>

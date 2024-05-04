@@ -38,20 +38,21 @@
                         <img onclick="https://www.royalorchidhotels.com/regenta-kabini-springs-resort/overview" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1" alt="Kabini">
                         </a>
                     </div>
-                <div class= "item"><a href="#"><img
-                            onclick="location='https://www.royalorchidhotels.com/'"
-                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
-                            alt="metropole"></a></div>
-                <div class= "item"><a href="#"><img
-                            onclick="location='https://www.royalorchidhotels.com/driving-holidays'"
-                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
-                            alt="Driving Holidays"></a>
+                <div class= "item">
+                    <a href="#">
+                        <img onclick="location='#'" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1" alt="metropole">
+                    </a>
+                </div>
+                <div class= "item">
+                    <a href="#">
+                        <img onclick="location='#'" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1" alt="Driving Holidays">
+                    </a>
                 </div>
             </div>
             <div class="carousel-arrows"> <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <img src="https://www.royalorchidhotels.com/images/arrow_left.png" alt="Royal Orchid Hotel">
+                    <img src="{{ public_asset('assets/frontend/images/arrow_left.png') }}" alt="{{ getSettings()->app_name }}">
                 </a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <img
-                        src="https://www.royalorchidhotels.com/images/arrow_right.png" alt="Royal Orchid Hotel">
+                        src="{{ public_asset('assets/frontend/images/arrow_right.png') }}" alt="{{ getSettings()->app_name }}">
                 </a> </div>
         </div>
         <div class="banner-text booking_ul_new wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
