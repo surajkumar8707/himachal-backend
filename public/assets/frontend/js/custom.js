@@ -3,51 +3,51 @@ $("#txtsearchhotels").keypress(function (event) {
         event.preventDefault();
     }
 });
- // Create cookie
-    function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        let expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-    // Delete cookie
-    function deleteCookie(cname) {
-        const d = new Date();
-        d.setTime(d.getTime() + (24*60*60*1000));
-        let expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=;" + expires + ";path=/";
-    }
-    // Read cookie
-    function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
+// Create cookie
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+// Delete cookie
+function deleteCookie(cname) {
+    const d = new Date();
+    d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=;" + expires + ";path=/";
+}
+// Read cookie
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
         }
-    if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-    }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
     return "";
-    }
-    // Set cookie consent
-    function acceptCookieConsent(){
-        deleteCookie('user_cookie_consent');
-        setCookie('user_cookie_consent', 1, 30);
-        document.getElementById("cookieNotice").style.display = "none";
-    }
-    let cookie_consent = getCookie("user_cookie_consent");
-    if(cookie_consent != ""){
-        document.getElementById("cookieNotice").style.display = "none";
-    }else{
-        //document.getElementById("cookieNotice").style.display = "block";
-        document.getElementById("cookieNotice").style.visibility = "hidden";
-    }
+}
+// Set cookie consent
+function acceptCookieConsent() {
+    deleteCookie('user_cookie_consent');
+    setCookie('user_cookie_consent', 1, 30);
+    document.getElementById("cookieNotice").style.display = "none";
+}
+let cookie_consent = getCookie("user_cookie_consent");
+if (cookie_consent != "") {
+    document.getElementById("cookieNotice").style.display = "none";
+} else {
+    //document.getElementById("cookieNotice").style.display = "block";
+    document.getElementById("cookieNotice").style.visibility = "hidden";
+}
 function showIt2() {
-  document.getElementById("cookieNotice").style.visibility = "visible";
+    document.getElementById("cookieNotice").style.visibility = "visible";
 }
 setTimeout("showIt2()", 7000);
 //function myCarouselcs() {
@@ -72,11 +72,11 @@ $(document).ready(function () {
                     $(".Hotelcitylist").text("");
                     if (!data.d.length) {
                         var result = [
-                        {
-                            label: 'We are not present there yet!',
-                            value: response.term,
-                            coltype: ''
-                        }
+                            {
+                                label: 'We are not present there yet!',
+                                value: response.term,
+                                coltype: ''
+                            }
                         ];
                         response(result);
                     }
@@ -104,10 +104,10 @@ $(document).ready(function () {
     });
     auto.data("ui-autocomplete")._renderItem = function (ul, item) {
         return $("<li>")
-        .append('<a href=' + item.val + ' target="_blank"  class="row" >'
-                        + '<div class="pullleft cl-8 ">'
-                        + item.label + ' </div>'
-                        + '<div class="pullright cl-4 text-right"><p>' + item.coltype + '</p></div></a>') //You can format the design in above code in whatever format you want.
+            .append('<a href=' + item.val + ' target="_blank"  class="row" >'
+                + '<div class="pullleft cl-8 ">'
+                + item.label + ' </div>'
+                + '<div class="pullright cl-4 text-right"><p>' + item.coltype + '</p></div></a>') //You can format the design in above code in whatever format you want.
             .appendTo($(".Hotelcitylist"));
     }
 });
@@ -176,9 +176,9 @@ $(document).ready(function () {
             nav: false,
             navText: ['<i class="fa fa-chevron-circle-left"></i>', '<i class="fa fa-chevron-circle-right"></i>'],
             responsive: {
-                0: {items: 1},
-                600: {items: 1},
-                1000: {items: 1}
+                0: { items: 1 },
+                600: { items: 1 },
+                1000: { items: 1 }
             }
         })
     };
@@ -202,7 +202,7 @@ $(document).ready(function () {
     }
     $(".gallery_box label").click(function () {
         $(".gallery_box label").removeClass("gallery_tab_active");
-        // instead of this do the below 
+        // instead of this do the below
         $(this).addClass("gallery_tab_active");
     });
     $('.sidebar-menu').mouseenter(function () {
@@ -448,7 +448,7 @@ $(document).ready(function () {
     var showChar = 325;
     var ellipsestext = "...";
     var moretext = "<p style='font-size:14px;text-transform:capitalize;border-bottom:1px solid #943c90;display:inline;font-weight:100;color: #943c90;'>Read More</p>";
-    var lesstext = "<p style='font-size:14px;text-transform:capitalize;border-bottom:1px solid #943c90;display:inline;font-weight:100;color: #943c90;'>Read Less</p>"; 
+    var lesstext = "<p style='font-size:14px;text-transform:capitalize;border-bottom:1px solid #943c90;display:inline;font-weight:100;color: #943c90;'>Read Less</p>";
     $('.more1').each(function () {
         var content = $(this).html();
 
@@ -462,7 +462,7 @@ $(document).ready(function () {
             $(this).html(html);
         }
 
-    }); 
+    });
     $(".morelink").click(function () {
         if ($(this).hasClass("less")) {
             $(this).removeClass("less");
@@ -862,7 +862,7 @@ function ShowHomeInclusion(SJHO_ID) {
             $("#myModal303").modal('show');
         }
     });
-} 
+}
 
 
 
