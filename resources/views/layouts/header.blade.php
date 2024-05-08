@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="visible-xs col-xs-12 no-padding mobile-nav">
                 <div class="col-xs-8 no-padding">
-                    <a href='{{ route("home") }}'>
+                    <a href='{{ route('home') }}'>
                         <h3>{{ getSettings()->app_name }}</h3>
                     </a>
                 </div>
@@ -36,16 +36,18 @@
             </div>
             <ul class="menu"> <a href="#" class="close_btn">X</a>
                 <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('room.type') }}">Room Type</a></li>
+                <li><a href="{{ route('booking') }}">Booking</a></li>
                 <li><a href="{{ route('about') }}">About</a></li>
-                <li class="mob_hide"> <a href="javascript:void(0);" id="opmenu" data-toggle="modal"
-                        data-target="#menuBox">Destinations
-                    </a> </li>
+                {{-- <li class="mob_hide">
+                    <a href="javascript:void(0);" id="opmenu" data-toggle="modal" data-target="#menuBox">Destinations </a>
+                </li>
                 <li id="opmen_mobile"> <a class="findhotel_link" href="javascript:void(0);">Destinations</a>
                     <div class='sidebar-1'> </div>
                 </li>
                 <li id="opmen_mobileInt"> <a class="findhotel_Intlink" href="javascript:void(0);">International</a>
                     <div class='sidebar-2'> </div>
-                </li>
+                </li> --}}
                 <li><a href='contact-us'>Contact</a></li>
                 <div class="navbar-header mobile_view_social">
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>

@@ -6,8 +6,11 @@
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-6"><h4 class="card-title">Room Type</h4></div>
-                    <div class="col-6 text-right"><a class="btn btn-primary" href="{{ route('admin.room.type.create') }}">Add</a></div>
+                    <div class="col-6">
+                        <h4 class="card-title">Room Type</h4>
+                    </div>
+                    <div class="col-6 text-right"><a class="btn btn-primary"
+                            href="{{ route('admin.room.type.create') }}">Add</a></div>
                 </div>
             </div>
             <!-- /.container-fluid -->
@@ -44,11 +47,11 @@
                                             </td>
                                             <td>
                                                 <div class="slider-container">
-                                                    <input @if ($room->status == 1) checked @endif type="checkbox"
-                                                        id="checkbox" class="checkbox">
-                                                    <label for="checkbox" class="slider"></label>
+                                                    <input data-url="{{ route('admin.room.type.update.status', $room->id) }}" id="checkbox-{{ $room->id }}"
+                                                        @if ($room->status == 1) checked @endif type="checkbox"
+                                                        class="checkbox">
+                                                    <label for="checkbox-{{ $room->id }}" class="slider"></label>
                                                 </div>
-
                                             </td>
                                             <td>
                                                 <a href="{{ route('admin.room.type.show', $room->id) }}"><i
@@ -91,6 +94,30 @@
     <script>
         $(document).ready(function() {
             $('#dataTable').DataTable();
+
+            // Your JavaScript code
+
+            $('.checkbox').change(function() {
+                var roomTypeId = $(this).attr('data-room-type-id');
+                var url = $(this).data('url');
+                var status = $(this).prop('checked') ? 1 : 0;
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        status: status
+                    },
+                    success: function(response) {
+                        // Handle success, if needed
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error, if needed
+                    }
+                });
+            });
+
         });
     </script>
 @endpush

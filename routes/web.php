@@ -38,11 +38,11 @@ Route::group(['prefix' => '/'], function () {
 
 
 // Authentication routes
-Route::get('/admin', function(){
+Route::get('/admin', function () {
     return redirect()->route('login');
 });
 
-Route::get('/admin/login', function(){
+Route::get('/admin/login', function () {
     return redirect()->route('login');
 });
 
@@ -79,15 +79,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     });
 
     Route::group(['prefix' => 'room-type', 'as' => 'room.type.'], function () {
-        Route::controller(AdminController::class)->group(function () {
-            Route::get("/", "roomTypeList")->name("list");
-            Route::get("/create", "roomTypeCreate")->name("create");
-            Route::post("/store", "roomTypeStore")->name("store");
-            Route::get("/edit/{id}", "roomTypeEdit")->name("edit");
-            Route::post("/update/{id}", "roomTypeUpdate")->name("update");
-            Route::get("/delete/{id}", "roomTypeDelete")->name("delete");
-            Route::get("/show/{id}", "roomTypeShow")->name("show");
-        });
+        Route::get("/", [AdminController::class, "roomTypeList"])->name("list");
+        Route::get("/create", [AdminController::class, "roomTypeCreate"])->name("create");
+        Route::post("/store", [AdminController::class, "roomTypeStore"])->name("store");
+        Route::get("/edit/{id}", [AdminController::class, "roomTypeEdit"])->name("edit");
+        Route::post("/update/{id}", [AdminController::class, "roomTypeUpdate"])->name("update");
+        Route::get("/delete/{id}", [AdminController::class, "roomTypeDelete"])->name("delete");
+        Route::get("/show/{id}", [AdminController::class, "roomTypeShow"])->name("show");
+        Route::post('update-status/{id}', [AdminController::class, "updateStatus"])->name('update.status');
     });
     // Add other admin routes here...
 });

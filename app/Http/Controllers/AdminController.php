@@ -375,4 +375,13 @@ class AdminController extends Controller
         // dd($bookings->toArray());
         return view('super_admin.bookings.index', compact('bookings'));
     }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $roomType = RoomType::findOrFail($id);
+        $roomType->status = $request->status;
+        $roomType->save();
+
+        return response()->json(['success' => true]);
+    }
 }
