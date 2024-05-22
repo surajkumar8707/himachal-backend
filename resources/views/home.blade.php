@@ -55,7 +55,7 @@
                         src="{{ public_asset('assets/frontend/images/arrow_right.png') }}" alt="{{ getSettings()->app_name }}">
                 </a> </div>
         </div>
-        <div class="banner-text booking_ul_new wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+        {{-- <div class="banner-text booking_ul_new wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
             <div class="col-md-12 form-group has-feedback"> <a href="#" class="booking_close_btn">X</a>
                 <ul class="booking_ul">
                     <li> <label>City</label> <select name="BookingEngine$DdlCity" id="BookingEngine_DdlCity"
@@ -179,7 +179,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <div class="container-fluid" id="belowSliderContent">

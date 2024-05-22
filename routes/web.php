@@ -77,7 +77,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
             Route::post("/setting-update", "appSettingUpdate")->name("setting.update");
         });
     });
-
+ 
     Route::group(['prefix' => 'room-type', 'as' => 'room.type.'], function () {
         Route::get("/", [AdminController::class, "roomTypeList"])->name("list");
         Route::get("/create", [AdminController::class, "roomTypeCreate"])->name("create");
