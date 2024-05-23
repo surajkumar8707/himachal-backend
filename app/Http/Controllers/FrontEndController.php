@@ -16,9 +16,10 @@ class FrontEndController extends Controller
      */
     public function index()
     {
+        $rooms = \App\Models\RoomType::where('status', 1)->orderBy('name', 'ASC')->get();
         $packages = PefectTourPackages::where('status', 1)->get();
         // dd($packages->toArray());
-        return view('home', compact('packages'));
+        return view('home', compact('packages', 'rooms'));
     }
 
     /**
