@@ -78,56 +78,55 @@
     </div>
 
     <div class="container-fluid" id="belowSliderContent">
+        <form class="shadow m30 form-inline" action="{{ route('submit.booking') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Enter name" name="name" id="name" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter email" name="email" id="email" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" placeholder="Enter phone" name="phone" id="phone" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" placeholder="Enter date" name="date" id="date" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="rooms">Number of Rooms</label>
+                <input type="number" placeholder="Enter rooms" name="rooms" id="rooms" class="form-control"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="visitors">Number of Visitors</label>
+                <input type="number" placeholder="Enter visitors" name="visitors" id="visitors" class="form-control"
+                    required>
+            </div>
+            <div class="form-group mb-4">
+                <label for="room_type_id">Room Type Categories</label>
+                <select name="room_type_id" id="room_type_id" class="form-control" required>
+                    <option value="">-- Select room type category --</option>
+                    @forelse ($rooms as $room)
+                        <option value="{{ $room->id }}">
+                            {{ $room->name . ' - (' . $room->season_rate . ')' }}</option>
+                    @empty
+                    @endforelse
+                </select>
+                {{-- <input type="number" name="visitors" id="visitors" class="form-control" required> --}}
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Book Now</button>
+            </div>
+        </form>
         <div class="container">
-
-            <form class="shadow m30" action="{{ route('submit.booking') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" placeholder="Enter name" name="name" id="name" class="form-control"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" placeholder="Enter email" name="email" id="email" class="form-control"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" placeholder="Enter phone" name="phone" id="phone" class="form-control"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" placeholder="Enter date" name="date" id="date" class="form-control"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="rooms">Number of Rooms</label>
-                    <input type="number" placeholder="Enter rooms" name="rooms" id="rooms" class="form-control"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="visitors">Number of Visitors</label>
-                    <input type="number" placeholder="Enter visitors" name="visitors" id="visitors" class="form-control"
-                        required>
-                </div>
-                <div class="form-group mb-4">
-                    <label for="room_type_id">Room Type Categories</label>
-                    <select name="room_type_id" id="room_type_id" class="form-control" required>
-                        <option value="">-- Select room type category --</option>
-                        @forelse ($rooms as $room)
-                            <option value="{{ $room->id }}">
-                                {{ $room->name . ' - (' . $room->season_rate . ')' }}</option>
-                        @empty
-                        @endforelse
-                    </select>
-                    {{-- <input type="number" name="visitors" id="visitors" class="form-control" required> --}}
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary btn-block">Book Now</button>
-            </form>
-
             <br><br>
             <div class="row">
                 <h1 class="ash1" style="text-transform: inherit;">Distinctly Warm Indian Hospitality </h1>
