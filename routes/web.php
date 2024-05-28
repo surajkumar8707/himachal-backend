@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomePageCarouselController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +78,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
             Route::post("/setting-update", "appSettingUpdate")->name("setting.update");
         });
     });
- 
+
     Route::group(['prefix' => 'room-type', 'as' => 'room.type.'], function () {
         Route::get("/", [AdminController::class, "roomTypeList"])->name("list");
         Route::get("/create", [AdminController::class, "roomTypeCreate"])->name("create");
@@ -88,5 +89,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get("/show/{id}", [AdminController::class, "roomTypeShow"])->name("show");
         Route::post('update-status/{id}', [AdminController::class, "updateStatus"])->name('update.status');
     });
+
+    //
+    Route::resource('home-page-carousel', HomePageCarouselController::class);
     // Add other admin routes here...
 });

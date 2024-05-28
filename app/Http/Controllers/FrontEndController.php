@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\HomePageCarousel;
 use App\Models\PefectTourPackages;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class FrontEndController extends Controller
     {
         $rooms = \App\Models\RoomType::where('status', 1)->orderBy('name', 'ASC')->get();
         $packages = PefectTourPackages::where('status', 1)->get();
+        $home_page_carousel = HomePageCarousel::where('status', 1)->orderBy('status', 'DESC')->get();
         // dd($packages->toArray());
-        return view('home', compact('packages', 'rooms'));
+        return view('home', compact('packages', 'rooms', 'home_page_carousel'));
     }
 
     /**

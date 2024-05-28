@@ -18,7 +18,14 @@
     <div class="carousel_top">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class= "carousel-inner ">
-                <div class= "item active ">
+                @foreach ($home_page_carousel as $carousel)
+                    <div class= "item @if($loop->iteration==1) active @endif">
+                        <a href="javascript:;">
+                            <img onclick="javascript:;" src="{{ public_asset($carousel->image) }}" alt="{{ $carousel->title }}">
+                        </a>
+                    </div>
+                @endforeach
+                {{-- <div class= "item active ">
                     <a href="javascript:;">
                         <img onclick="javascript:;"
                             src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1 size"
@@ -65,7 +72,7 @@
                             src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/01/6e/30/outdoor-pool.jpg?w=700&h=-1&s=1"
                             alt="Driving Holidays">
                     </a>
-                </div>
+                </div> --}}
             </div>
             <div class="carousel-arrows"> <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                     <img src="{{ public_asset('assets/frontend/images/arrow_left.png') }}"
@@ -82,28 +89,23 @@
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" placeholder="Enter name" name="name" id="name" class="form-control"
-                    required>
+                <input type="text" placeholder="Enter name" name="name" id="name" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" placeholder="Enter email" name="email" id="email" class="form-control"
-                    required>
+                <input type="email" placeholder="Enter email" name="email" id="email" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tel" placeholder="Enter phone" name="phone" id="phone" class="form-control"
-                    required>
+                <input type="tel" placeholder="Enter phone" name="phone" id="phone" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="date">Date</label>
-                <input type="date" placeholder="Enter date" name="date" id="date" class="form-control"
-                    required>
+                <input type="date" placeholder="Enter date" name="date" id="date" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="rooms">Number of Rooms</label>
-                <input type="number" placeholder="Enter rooms" name="rooms" id="rooms" class="form-control"
-                    required>
+                <input type="number" placeholder="Enter rooms" name="rooms" id="rooms" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="visitors">Number of Visitors</label>

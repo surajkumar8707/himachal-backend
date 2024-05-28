@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             ContactsTableSeeder::class,
             PefectTourPackagesSeeder::class,
             RoomTypeSeeder::class,
+            HomePageCarouselSeeder::class,
             // CountrySeeder::class,
             // StateSeeder::class,
             // CitySeeder::class,
