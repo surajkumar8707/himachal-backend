@@ -12,11 +12,12 @@
         {{ getSettings()->app_name }} | @yield('title')
     </title>
     <link href="{{ public_asset('assets/frontend/css/site.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css" />
     {{-- <link href="{{ public_asset('css/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css"/> --}}
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="{{ public_asset('assets/frontend/images/favicon1.ico') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
     @stack('styles')
 </head>
@@ -39,11 +40,12 @@
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js" type="text/javascript"></script>
+    {{-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js" type="text/javascript"></script> --}}
     <script src="{{ public_asset('assets/frontend/js/bootstrap.min.js') }}" type="text/javascript"></script>
     <script src="{{ public_asset('assets/frontend/js/owl.carousel.min.js') }}" type="text/javascript"></script>
     <script src='{{ public_asset('assets/frontend/js/bootstrap-datepicker.js') }}'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     </script>
 
     <div id="cookieNotice" class="light display-right">
@@ -62,11 +64,47 @@
     </div>
 
     <script src='{{ public_asset('assets/frontend/js/lightbox.min.js') }}'></script>
-    <script src='{{ public_asset('assets/frontend/js/custom.js') }}'></script>
+    {{-- <script src='{{ public_asset('assets/frontend/js/custom.js') }}'></script> --}}
     <script src='{{ public_asset('assets/frontend/js/validations.js') }}'></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js' async></script>
     {{-- </form> --}}
+
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "60000",
+            "extendedTimeOut": "60000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+    </script>
+
+    @if (Session::has('success'))
+        toastr.success("{{ Session::get('success') }}", "Success !");
+    @endif
+
+    @if (Session::has('error'))
+        toastr.error("{{ Session::get('error') }}", "Error !");
+    @endif
+
+    @if (Session::has('info'))
+        toastr.info("{{ Session::get('info') }}", "Info !");
+    @endif
+
+    @if (Session::has('warning'))
+        toastr.warning("{{ Session::get('warning') }}", "Warning !");
+    @endif
 </body>
 
 </html>

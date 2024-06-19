@@ -212,23 +212,28 @@ class FrontEndController extends Controller
             'visitors' => 'required|integer',
             'room_type_id' => 'required|exists:room_types,id',
         ]);
+        try {
+            // Create a new booking instance
+            // dd($validatedData);
+            $booking = new \App\Models\Bookings();
+            $booking->name = $validatedData['name'];
+            $booking->email = $validatedData['email'];
+            $booking->phone = $validatedData['phone'];
+            $booking->date = $validatedData['date'];
+            $booking->rooms = $validatedData['rooms'];
+            $booking->visitors = $validatedData['visitors'];
+            $booking->room_type_id = $validatedData['room_type_id'];
 
-        // Create a new booking instance
-        $booking = new \App\Models\Bookings();
-        $booking->name = $validatedData['name'];
-        $booking->email = $validatedData['email'];
-        $booking->phone = $validatedData['phone'];
-        $booking->date = $validatedData['date'];
-        $booking->rooms = $validatedData['rooms'];
-        $booking->visitors = $validatedData['visitors'];
-        $booking->room_type_id = $validatedData['room_type_id'];
+            // Save the booking to the database
+            $booking->save();
 
-        // Save the booking to the database
-        $booking->save();
+            // dd($request, $booking);
+            session()->flash('success', 'Booking has been successfully submitted.');
 
-        // dd($request, $booking);
-
-        // Redirect back with success message
-        return redirect()->route('home')->with('success', 'Booking has been successfully submitted.');
+            // Redirect back with success message
+            return redirect()->route('home')->with('success', 'Booking has been successfully submitted.');
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
     }
 }
