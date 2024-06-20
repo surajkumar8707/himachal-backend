@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\HomePageCarousel;
 use App\Models\PefectTourPackages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FrontEndController extends Controller
 {
@@ -215,24 +216,35 @@ class FrontEndController extends Controller
         try {
             // Create a new booking instance
             // dd($validatedData);
-            $booking = new \App\Models\Bookings();
-            $booking->name = $validatedData['name'];
-            $booking->email = $validatedData['email'];
-            $booking->phone = $validatedData['phone'];
-            $booking->date = $validatedData['date'];
-            $booking->rooms = $validatedData['rooms'];
-            $booking->visitors = $validatedData['visitors'];
-            $booking->room_type_id = $validatedData['room_type_id'];
+            // $booking = new \App\Models\Bookings();
+            // $booking->name = $validatedData['name'];
+            // $booking->email = $validatedData['email'];
+            // $booking->phone = $validatedData['phone'];
+            // $booking->date = $validatedData['date'];
+            // $booking->rooms = $validatedData['rooms'];
+            // $booking->visitors = $validatedData['visitors'];
+            // $booking->room_type_id = $validatedData['room_type_id'];
 
-            // Save the booking to the database
+            // // Save the booking to the database
+            // $booking->save();
+
+            // Create a new booking instance
+            $booking = new \App\Models\Bookings();
+            $booking->fill($validatedData);
             $booking->save();
 
-            // dd($request, $booking);
-            session()->flash('success', 'Booking has been successfully submitted.');
+            // Send confirmation email to user
+            $response1 = Mail::to($validatedData['email'])->send(new \App\Mail\BookingConfirmation($booking));
+            // dd($validatedData, $booking, $response1);
+
+            // Send confirmation email to admin
+            $adminEmail = 'surraj8707@gmail.com';
+            Mail::to($adminEmail)->send(new \App\Mail\BookingNotification($booking));
 
             // Redirect back with success message
             return redirect()->route('home')->with('success', 'Booking has been successfully submitted.');
         } catch (\Exception $e) {
+            // return redirect()->back()->with('error', $e->getMessage());
             dd($e->getMessage());
         }
     }

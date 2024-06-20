@@ -70,34 +70,40 @@
                             @csrf
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" placeholder="Enter name" name="name" id="name" class="form-control" required>
+                                <input type="text" placeholder="Enter name" name="name" id="name"
+                                    class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" placeholder="Enter email" name="email" id="email" class="form-control" required>
+                                <input type="email" placeholder="Enter email" name="email" id="email"
+                                    class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="tel" placeholder="Enter phone" name="phone" id="phone" class="form-control" required>
+                                <input type="tel" placeholder="Enter phone" name="phone" id="phone"
+                                    class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="date">Date</label>
-                                <input type="date" placeholder="Enter date" name="date" id="date" class="form-control" required>
+                                <input type="date" placeholder="Enter date" name="date" id="date" class="form-control minDate" required>
                             </div>
                             <div class="form-group">
                                 <label for="rooms">Number of Rooms</label>
-                                <input type="number" placeholder="Enter rooms" name="rooms" id="rooms" class="form-control" required>
+                                <input type="number" placeholder="Enter rooms" name="rooms" id="rooms"
+                                    class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="visitors">Number of Visitors</label>
-                                <input type="number" placeholder="Enter visitors" name="visitors" id="visitors" class="form-control" required>
+                                <input type="number" placeholder="Enter visitors" name="visitors" id="visitors"
+                                    class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="room_type_id">Room Type Categories</label>
                                 <select name="room_type_id" id="room_type_id" class="form-control" required>
                                     <option value="">-- Select room type category --</option>
                                     @forelse ($rooms as $room)
-                                        <option @selected($id == $room->id) value="{{ $room->id }}">{{ $room->name.' - ('.$room->season_rate.')' }}</option>
+                                        <option @selected($id == $room->id) value="{{ $room->id }}">
+                                            {{ $room->name . ' - (' . $room->season_rate . ')' }}</option>
                                     @empty
                                     @endforelse
                                 </select>

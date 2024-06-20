@@ -101,7 +101,7 @@
             </div>
             <div class="form-group">
                 <label for="date">Date</label>
-                <input type="date" placeholder="Enter date" name="date" id="date" class="form-control" required>
+                <input type="date" placeholder="Enter date" name="date" id="date" class="form-control minDate" required>
             </div>
             <div class="form-group">
                 <label for="rooms">Number of Rooms</label>

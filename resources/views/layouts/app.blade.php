@@ -68,6 +68,8 @@
     <script src='{{ public_asset('assets/frontend/js/validations.js') }}'></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js' async></script>
+
+    @stack('scripts')
     {{-- </form> --}}
 
     <script>
@@ -90,20 +92,45 @@
         };
     </script>
 
+    <script>
+        $(function() {
+            var dtToday = new Date();
+
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + day.toString();
+
+            var maxDate = year + '-' + month + '-' + day;
+            $('.minDate').attr('min', maxDate);
+        });
+    </script>
+
     @if (Session::has('success'))
-        toastr.success("{{ Session::get('success') }}", "Success !");
+        <script>
+            toastr.success("{{ Session::get('success') }}", "Success !");
+        </script>
     @endif
 
     @if (Session::has('error'))
-        toastr.error("{{ Session::get('error') }}", "Error !");
+        <script>
+            toastr.error("{{ Session::get('error') }}", "Error !");
+        </script>
     @endif
 
     @if (Session::has('info'))
-        toastr.info("{{ Session::get('info') }}", "Info !");
+        <script>
+            toastr.info("{{ Session::get('info') }}", "Info !");
+        </script>
     @endif
 
     @if (Session::has('warning'))
-        toastr.warning("{{ Session::get('warning') }}", "Warning !");
+        <script>
+            toastr.warning("{{ Session::get('warning') }}", "Warning !");
+        </script>
     @endif
 </body>
 
