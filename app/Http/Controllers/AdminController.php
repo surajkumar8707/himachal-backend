@@ -371,7 +371,7 @@ class AdminController extends Controller
 
     public function bookings()
     {
-        $bookings = \App\Models\Bookings::with(['roomType'])->get();
+        $bookings = \App\Models\Bookings::with(['roomType'])->orderBy('updated_at', 'DESC')->get();
         // dd($bookings->toArray());
         return view('super_admin.bookings.index', compact('bookings'));
     }
