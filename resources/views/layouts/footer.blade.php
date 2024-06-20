@@ -17,8 +17,8 @@
                 </div>
                 <div class="col-md-7 col-sm-12 text-right text-center-sm">
                     <div class="social_box row">
-                        <div class="col-md-4 text-left"> <a href="#"
-                                target="_blank"><i class="fab fa-facebook-f"></i></a> <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a> </div>
+                        <div class="col-md-4 text-left"> <a href="{{ getSocialMediaLink()->facebook }}"
+                                target="_blank"><i class="fab fa-facebook-f"></i></a> <a href="{{ getSocialMediaLink()->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a> <a href="{{ getSocialMediaLink()->linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a> </div>
                         <div class="col-md-8 p0"> </div>
                     </div>
                 </div>

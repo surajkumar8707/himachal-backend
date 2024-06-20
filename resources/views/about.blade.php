@@ -14,7 +14,7 @@
             <div class="container">
                 <h1 class="ash1"> <span itemprop="name">About Us</span> </h1>
                 <p>
-                    Welcome to Hotel Trehan, a distinguished hospitality brand located in the heart of Lucknow, India. With
+                    Welcome to Hotel Trehan, a distinguished hospitality brand located in the heart of Himachal, India. With
                     a
                     rich legacy spanning over two decades, we are dedicated to offering unparalleled experiences to our
                     guests.
@@ -27,14 +27,14 @@
                     cuisine,
                     and authentic Indian hospitality. Our diverse portfolio includes luxurious hotels, elegant resorts, and
                     charming inns, ensuring that every guest discovers their perfect retreat. Whether you're exploring the
-                    vibrant city of Lucknow, embarking on a cultural journey, or seeking tranquility amidst nature, our
+                    vibrant city of Himachal, embarking on a cultural journey, or seeking tranquility amidst nature, our
                     properties provide an unmatched blend of comfort and convenience.
                 </p>
 
                 <br>
 
                 <p>
-                    Situated in the historic city of Lucknow, our hotel embodies the essence of Indian hospitality, blending
+                    Situated in the historic city of Himachal, our hotel embodies the essence of Indian hospitality, blending
                     modern amenities with traditional charm. Our passionate team is committed to delivering exceptional
                     guest
                     experiences, guided by our core values of integrity, excellence, and personalized service.
