@@ -19,9 +19,9 @@ class SettingSeeder extends Seeder
         // Seed new data
         Setting::create([
             'app_name' => 'Hotel Trehan',
-            'email' => 'hoteltrehan@gmail.com',
-            'whatsapp' => '+91 8707633860',
-            'contact' => '+91 8707633860',
+            'email' => 'Trehanhotel@gmail.com',
+            'whatsapp' => '+91 9816687605',
+            'contact' => '+91 9816687605',
             'address' => 'Lucknow, India',
             'header_image' => 'assets/images/header-logo.png',
         ]);

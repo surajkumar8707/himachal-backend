@@ -19,8 +19,8 @@ class SocialMediaLinkSeeder extends Seeder
         // Seed new data
         SocialMediaLink::create([
             'youTube' => 'https://www.youtube.com/',
-            'instagram' => 'https://www.instagram.com/',
-            'facebook' => 'https://www.facebook.com/',
+            'instagram' => 'https://www.instagram.com/hoteltrehans?igsh=ZTk0bmpybmI1bWx5&utm_source=qr',
+            'facebook' => 'https://www.facebook.com/HotelTrehans2110?mibextid=LQQJ4d',
             'linkedin' => 'https://www.linkedin.com/',
             'twitter' => 'https://twitter.com/',
         ]);
