@@ -22,7 +22,7 @@ class SettingSeeder extends Seeder
             'email' => 'Trehanhotel@gmail.com',
             'whatsapp' => '+91 9816687605',
             'contact' => '+91 9816687605',
-            'address' => 'Lucknow, India',
+            'address' => 'Vpo Sarahan bushar, teh Rampur bushar , distt shimla , hp',
             'header_image' => 'assets/images/header-logo.png',
         ]);
     }
