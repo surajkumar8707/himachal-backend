@@ -22,7 +22,7 @@
 
                 <h2 class="text-left">Check-in and Check-out:</h2>
                 <ul>
-                    <li>Check-in time is [insert check-in time], and check-out time is [insert check-out time].</li>
+                    <li>Check-in time is 1:00 Pm, and check-out time is 11:00 PM.</li>
                     <li>Early check-in and late check-out are subject to availability and may incur additional charges.</li>
                 </ul>
 

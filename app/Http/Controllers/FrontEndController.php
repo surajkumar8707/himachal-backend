@@ -214,19 +214,6 @@ class FrontEndController extends Controller
             'room_type_id' => 'required|exists:room_types,id',
         ]);
         try {
-            // Create a new booking instance
-            // dd($validatedData);
-            // $booking = new \App\Models\Bookings();
-            // $booking->name = $validatedData['name'];
-            // $booking->email = $validatedData['email'];
-            // $booking->phone = $validatedData['phone'];
-            // $booking->date = $validatedData['date'];
-            // $booking->rooms = $validatedData['rooms'];
-            // $booking->visitors = $validatedData['visitors'];
-            // $booking->room_type_id = $validatedData['room_type_id'];
-
-            // // Save the booking to the database
-            // $booking->save();
 
             // Create a new booking instance
             $booking = new \App\Models\Bookings();
@@ -238,7 +225,12 @@ class FrontEndController extends Controller
             // dd($validatedData, $booking, $response1);
 
             // Send confirmation email to admin
-            $adminEmail = 'surraj8707@gmail.com';
+            if(!empty(getSettings()) and (isset(getSettings()->email) and !empty(getSettings()->email))){
+                $adminEmail = getSettings()->email;
+            }
+            else{
+                $adminEmail = "Trehanhotel@gmail.com";
+            }
             Mail::to($adminEmail)->send(new \App\Mail\BookingNotification($booking));
 
             // Redirect back with success message
