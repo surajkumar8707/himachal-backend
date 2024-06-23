@@ -11,18 +11,31 @@
                     <a href='terms-and-conditions' class="prtnr1">TERMS & CONDITIONS</a>
                     <a href="../contact-us" class="prtnr caps">Contact Us</a>
                 </div>
-                <div class="col-sm-12">
-                    <div class="footer_brand_wrapper_">
-                    </div>
-                </div>
                 <div class="col-md-7 col-sm-12 text-right text-center-sm">
                     <div class="social_box row">
-                        <div class="col-md-4 text-left"> <a href="{{ getSocialMediaLink()->facebook }}"
+                        <div class="col-md-4 text-left">
+                            @if(!empty(getSocialMediaLink()) and (isset(getSocialMediaLink()->facebook) and !empty(getSocialMediaLink()->facebook)))
+                                <a href="{{ getSocialMediaLink()->facebook }}" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            @endif
+                            @if(!empty(getSocialMediaLink()) and (isset(getSocialMediaLink()->instagram) and !empty(getSocialMediaLink()->instagram)))
+                                <a href="{{ getSocialMediaLink()->instagram }}" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            @endif
+                            @if(!empty(getSocialMediaLink()) and (isset(getSocialMediaLink()->linkedin) and !empty(getSocialMediaLink()->linkedin)))
+                                <a href="{{ getSocialMediaLink()->linkedin }}" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            @endif
+                        </div>
+                        {{-- <div class="col-md-4 text-left"> <a href="{{ getSocialMediaLink()->facebook }}"
                                 target="_blank"><i class="fab fa-facebook-f"></i></a> <a href="{{ getSocialMediaLink()->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a> <a href="{{ getSocialMediaLink()->linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a> </div>
-                        <div class="col-md-8 p0"> </div>
+                        <div class="col-md-8 p0"> </div> --}}
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-12" style="text-align: right;">
+                {{-- <div class="col-md-5 col-sm-12" style="text-align: right;">
                     <div id="Footer_UpdatePanel2">
                         <div class="ftr"> <input name="Footer$exampleInputEmail" type="text"
                                 id="Footer_exampleInputEmail" autocomplete="off" class="form-control"
@@ -31,7 +44,7 @@
                             <div id="corrcetemai"></div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-sm-12">
                     <p class="copryright_footer text-center">Copyright&copy;{{ date('Y').','.getSettings()->app_name }}.
                         All Rights Reserved.</p>
