@@ -77,10 +77,30 @@ class FrontEndController extends Controller
             'message' => 'required',
         ]);
 
-        $contact = Contact::create($validatedData);
+        // dd($validatedData);
+
+        // Create a new booking instance
+        $contact = new \App\Models\Contact();
+        $contact->fill($validatedData);
+        $contact->save();
+
+        // Send confirmation email to user
+        $response1 = Mail::to($validatedData['email'])->send(new \App\Mail\ContactMail($contact,'Thank You for Contacting Us', 'emails.contact_user'));
+        // dd($validatedData, $contact, $response1);
+
+        // Send confirmation email to admin
+        if(!empty(getSettings()) and (isset(getSettings()->email) and !empty(getSettings()->email))){
+            $adminEmail = getSettings()->email;
+        }
+        else{
+            $adminEmail = "Trehanhotel@gmail.com";
+        }
+        Mail::to($adminEmail)->send(new \App\Mail\ContactMail($contact, 'New Contact Form Submission', 'emails.contact_admin'));
+
+        // $contact = Contact::create($validatedData);
 
         // Optionally, you can add a success message or redirect to a thank-you page
-        return redirect()->back()->with('success', 'Your message has been sent successfully!');
+        return redirect()->back()->with('success', 'Thank you for contacting us, we will contact you soon');
     }
 
     /**

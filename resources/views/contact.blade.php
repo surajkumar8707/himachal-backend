@@ -40,9 +40,8 @@
 @endpush
 @section('content')
     <section class="career_banner_image">
-        <img src="{{ public_asset('assets/images/contact-banner.jpg') }}"
-            class="img-responsive_ img-thumbnail w-100" alt="{{ getSettings()->app_name }}" width="100%"
-            height="400px !important">
+        <img src="{{ public_asset('assets/images/contact-banner.jpg') }}" class="img-responsive_ img-thumbnail w-100"
+            alt="{{ getSettings()->app_name }}" width="100%" height="400px !important">
     </section>
     <section class="contact_sec contact-us-cs-sc">
         <div class="container">
@@ -73,38 +72,79 @@
                                             <div class="col-md-3"></div>
 
                                             <div id="mes">
-                                                <div class="col-sm-6">
-                                                    <div class="box_warp2">
-                                                        <h3>Lucknow</h3>
-                                                        <p>
-                                                            <b><i class="fa fa-map-marker"></i></b>
-                                                            {{ getSettings()->address }}
-                                                        </p>
-                                                        <p>
-                                                            <b><i class="fa fa-mobile"></i> </b>
-                                                            <a href="tel:+91 {{ getSettings()->contact }}">
-                                                                {{ getSettings()->contact }} </a>
-                                                        </p>
-                                                        <p>
-                                                            <b><i class="fa fa-phone"></i> </b>
-                                                            <a href="tel:+91 {{ getSettings()->contact }}">
-                                                                {{ getSettings()->contact }}
-                                                            </a>
-                                                        </p>
-                                                        <p>
-                                                            <b><i class="fa fa-envelope"></i> </b>
-                                                            <a href="mailto:{{ getSettings()->email }}">
-                                                                {{ getSettings()->email }}
-                                                            </a>
-                                                        </p>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="box_warp2">
+                                                            <h3>Lucknow</h3>
+                                                            <p>
+                                                                <b><i class="fa fa-map-marker"></i></b>
+                                                                {{ getSettings()->address }}
+                                                            </p>
+                                                            <p>
+                                                                <b><i class="fa fa-mobile"></i> </b>
+                                                                <a href="tel:+91 {{ getSettings()->contact }}">
+                                                                    {{ getSettings()->contact }} </a>
+                                                            </p>
+                                                            <p>
+                                                                <b><i class="fa fa-phone"></i> </b>
+                                                                <a href="tel:+91 {{ getSettings()->contact }}">
+                                                                    {{ getSettings()->contact }}
+                                                                </a>
+                                                            </p>
+                                                            <p>
+                                                                <b><i class="fa fa-envelope"></i> </b>
+                                                                <a href="mailto:{{ getSettings()->email }}">
+                                                                    {{ getSettings()->email }}
+                                                                </a>
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div>
+                                                    <div class="col-md-6">
+                                                        <form action="{{ route('save.contact') }}" method="POST">
+                                                            @csrf
+                                                            <div class="form-group mt1">
+                                                                {{-- <label for="name">Name</label> --}}
+                                                                <input type="text" required autofocus name="name" id="name" class="form-control @error('name') @enderror" placeholder="Name">
+                                                                @error('name')
+                                                                    <small class="text-danger">{{ $message }}</small>
+                                                                @enderror
+                                                            </div>
+
+                                                            <div class="form-group mt1">
+                                                                {{-- <label for="email">Email</label> --}}
+                                                                <input type="email" required name="email" id="email" class="form-control @error('email') @enderror" placeholder="email@example.com">
+                                                                @error('email')
+                                                                    <small class="text-danger">{{ $message }}</small>
+                                                                @enderror
+                                                            </div>
+
+                                                            <div class="form-group mt1">
+                                                                {{-- <label for="name">Name</label> --}}
+                                                                <input type="text" required name="subject" id="subject" class="form-control @error('subject') @enderror" placeholder="subject">
+                                                                @error('subject')
+                                                                    <small class="text-danger">{{ $message }}</small>
+                                                                @enderror
+                                                            </div>
+
+                                                            <div class="form-group mt1">
+                                                                {{-- <label for="name">Name</label> --}}
+                                                                <input type="text" required name="message" id="message" class="form-control @error('message') @enderror" placeholder="message">
+                                                                @error('message')
+                                                                    <small class="text-danger">{{ $message }}</small>
+                                                                @enderror
+                                                            </div>
+
+                                                            <div class="form-group mt1">
+                                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                     </section>
                 </div>
             </div>
