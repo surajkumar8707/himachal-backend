@@ -20,6 +20,12 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link @active(['admin.customer.payments']) active @endactive" href="{{ route('admin.customer.payments') }}">
+                <i class="fas fa-fw fa-money-bill-alt"></i>
+                <span>Payments</span></a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link @active(['admin.room.type.list', 'admin.room.type.create', 'admin.room.type.edit', 'admin.room.type.show']) active @endactive" href="{{ route('admin.room.type.list') }}">
                 <i class="fas fa-fw fa-address-book"></i>
                 <span>Room Type</span></a>

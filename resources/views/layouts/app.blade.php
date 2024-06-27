@@ -69,9 +69,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js' async></script>
 
-    @stack('scripts')
-    {{-- </form> --}}
-
     <script>
         toastr.options = {
             "closeButton": true,
@@ -132,6 +129,8 @@
             toastr.warning("{{ Session::get('warning') }}", "Warning !");
         </script>
     @endif
+
+    @stack('scripts')
 </body>
 
 </html>

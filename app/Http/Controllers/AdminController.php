@@ -384,4 +384,17 @@ class AdminController extends Controller
 
         return response()->json(['success' => true]);
     }
+
+    public function paymentsShow()
+    {
+        try{
+            // paymentsShow
+            $payments = \App\Models\Payment::with(['booking'])->orderBy('updated_at', 'DESC')->get();
+            // dd($payments->toArray());
+            return view('super_admin.payments.index', compact('payments'));
+        }
+        catch(\Exception $e){
+            dd($e->getMessage());
+        }
+    }
 }

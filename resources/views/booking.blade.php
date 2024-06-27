@@ -52,6 +52,7 @@
             background-color: #0056b3;
         }
     </style>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 @endpush
 
 @section('content')
@@ -66,7 +67,7 @@
             <div class="col-md-12 mx-auto">
                 <div class="card booking-card">
                     <div class="card-body">
-                        <form action="{{ route('submit.booking') }}" method="POST">
+                        <form id="orderForm" action="{{ route('create.order') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -85,7 +86,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="date">Date</label>
-                                <input type="date" placeholder="Enter date" name="date" id="date" class="form-control minDate" required>
+                                <input type="date" placeholder="Enter date" name="date" id="date"
+                                    class="form-control minDate" required>
                             </div>
                             <div class="form-group">
                                 <label for="rooms">Number of Rooms</label>
@@ -102,7 +104,7 @@
                                 <select name="room_type_id" id="room_type_id" class="form-control" required>
                                     <option value="">-- Select room type category --</option>
                                     @forelse ($rooms as $room)
-                                        <option @selected($id == $room->id) value="{{ $room->id }}">
+                                        <option data-amount="{{ $room->season_rate }}" data-room_name="{{ $room->name }}" @selected($id == $room->id) value="{{ $room->id }}">
                                             {{ $room->name . ' - (' . $room->season_rate . ')' }}</option>
                                     @empty
                                     @endforelse
@@ -110,7 +112,29 @@
                                 {{-- <input type="number" name="visitors" id="visitors" class="form-control" required> --}}
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button id="create-order" type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <div id="button-disable-spinner" style="display: none;">
+                                <button class="btn btn-primary btn-block" type="button" disabled>
+                                    <span role="status">Loading...</span>
+                                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <form id="paymentForm" action="{{ route('submit.booking') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="razorpay_name" id="razorpay_name">
+                            <input type="hidden" name="razorpay_amount" id="razorpay_amount">
+                            <input type="hidden" name="razorpay_email" id="razorpay_email">
+                            <input type="hidden" name="razorpay_phone" id="razorpay_phone">
+                            <input type="hidden" name="razorpay_date" id="razorpay_date">
+                            <input type="hidden" name="razorpay_rooms" id="razorpay_rooms">
+                            <input type="hidden" name="razorpay_visitors" id="razorpay_visitors">
+                            <input type="hidden" name="razorpay_room_name" id="razorpay_room_name">
+                            <input type="hidden" name="razorpay_room_id" id="razorpay_room_id">
+                            <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+                            <input type="hidden" name="razorpay_order_id" id="razorpay_order_id">
+                            <input type="hidden" name="razorpay_signature" id="razorpay_signature">
                         </form>
                     </div>
                 </div>
@@ -118,3 +142,95 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        document.getElementById('orderForm').onsubmit = async function(e) {
+            e.preventDefault();
+
+            const button = document.getElementById("create-order");
+            const button_disable_spinner = document.getElementById("button-disable-spinner");
+
+            // Disable the button
+            button.style.display = "none";
+            button_disable_spinner.style.display = "block";
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const rooms = document.getElementById('rooms').value;
+            const visitors = document.getElementById('visitors').value;
+
+            // console.log(name,email,phone,date,rooms, visitors);
+
+            const selectedRoom = document.getElementById('room_type_id').selectedOptions[0];
+            const amount = selectedRoom.getAttribute('data-amount');
+            const room_name = selectedRoom.getAttribute('data-room_name');
+            const room_id = selectedRoom.getAttribute('value');
+
+            const response = await fetch('{{ route("create.order") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    phone,
+                    date,
+                    rooms,
+                    visitors,
+                    amount,
+                    room_name
+                })
+            });
+
+            const data = await response.json();
+
+            const options = {
+                "key": "{{ env('RAZORPAY_KEY') }}",
+                "amount": data.amount,
+                "currency": "INR",
+                "name": room_name,
+                "description": room_name,
+                "order_id": data.id,
+                "handler": function(response) {
+                    console.log(response);
+                    // return false;
+                    // document.getElementById('pay_amount').value = amount;
+                    // document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+                    // document.getElementById('razorpay_order_id').value = response.razorpay_order_id;
+                    // document.getElementById('razorpay_signature').value = response.razorpay_signature;
+                    document.getElementById('razorpay_name').value = name;
+                    document.getElementById('razorpay_email').value = email;
+                    document.getElementById('razorpay_phone').value = phone;
+                    document.getElementById('razorpay_date').value = date;
+                    document.getElementById('razorpay_rooms').value = rooms;
+                    document.getElementById('razorpay_visitors').value = visitors;
+                    document.getElementById('razorpay_amount').value = amount;
+                    document.getElementById('razorpay_room_name').value = room_name;
+                    document.getElementById('razorpay_room_id').value = room_id;
+                    document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+                    document.getElementById('razorpay_order_id').value = response.razorpay_order_id;
+                    document.getElementById('razorpay_signature').value = response.razorpay_signature;
+                    document.getElementById('paymentForm').submit();
+                },
+                "prefill": {
+                    "name": name,
+                    "email": email,
+                    "contact": phone
+                },
+                "notes": {
+                    "address": "Razorpay Corporate Office"
+                },
+                "theme": {
+                    "color": "#F37254"
+                }
+            };
+            const rzp1 = new Razorpay(options);
+            rzp1.open();
+        }
+    </script>
+@endpush

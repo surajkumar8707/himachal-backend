@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\HomePageCarousel;
+use App\Models\Payment;
 use App\Models\PefectTourPackages;
 use Illuminate\Http\Request;
+use Razorpay\Api\Api;
 use Illuminate\Support\Facades\Mail;
 
 class FrontEndController extends Controller
@@ -221,28 +223,87 @@ class FrontEndController extends Controller
         return view('booking', compact('rooms', 'id'));
     }
 
+    public function createOrder(Request $request)
+    {
+        try{
+            $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
+            $orderData = [
+                'receipt'         => $request->room_name,
+                'amount'          => $request->amount * 100, // amount in the smallest currency unit
+                'currency'        => 'INR'
+            ];
+            $razorpayOrder = $api->order->create($orderData);
+            // dd($razorpayOrder);
+            return response()->json([
+                'id' => $razorpayOrder['id'],
+                'amount' => $razorpayOrder['amount']
+            ]);
+        }
+        catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
     public function bookingStore(Request $request)
     {
+        // dd($request->all());
         // Validate the form data
         $validatedData = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'required|string',
-            'date' => 'required|date',
-            'rooms' => 'required|integer',
-            'visitors' => 'required|integer',
-            'room_type_id' => 'required|exists:room_types,id',
+            'razorpay_name' => 'required|string',
+            'razorpay_email' => 'required|email',
+            'razorpay_phone' => 'required|string',
+            'razorpay_date' => 'required|date',
+            'razorpay_rooms' => 'required|integer',
+            'razorpay_visitors' => 'required|integer',
+            'razorpay_room_id' => 'required|exists:room_types,id',
+            'razorpay_payment_id' => 'required',
+            'razorpay_order_id' => 'required',
+            'razorpay_signature' => 'required',
+            'razorpay_amount' => 'required',
         ]);
         try {
 
+            $newBookingData = [];
+            $newBookingData['name'] = $validatedData['razorpay_name'];
+            $newBookingData['email'] = $validatedData['razorpay_email'];
+            $newBookingData['phone'] = $validatedData['razorpay_phone'];
+            $newBookingData['date'] = $validatedData['razorpay_date'];
+            $newBookingData['rooms'] = $validatedData['razorpay_rooms'];
+            $newBookingData['visitors'] = $validatedData['razorpay_visitors'];
+            $newBookingData['room_type_id'] = $validatedData['razorpay_room_id'];
+
+            // dd($newBookingData, $validatedData);
+
             // Create a new booking instance
             $booking = new \App\Models\Bookings();
-            $booking->fill($validatedData);
+            $booking->fill($newBookingData);
             $booking->save();
 
+            $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
+
+            // Verify the payment
+            $attributes = [
+                'razorpay_order_id' => $request->razorpay_order_id,
+                'razorpay_payment_id' => $request->razorpay_payment_id,
+                'razorpay_signature' => $request->razorpay_signature
+            ];
+
+            $payment_details = $api->utility->verifyPaymentSignature($attributes);
+            // dd($payment_details);
+
+            // Payment successful, save the payment details in the database
+            Payment::create([
+                'booking_id' => $booking->id,
+                'payment_id' => $request->razorpay_payment_id,
+                'order_id' => $request->razorpay_order_id,
+                'signature' => $request->razorpay_signature,
+                'amount' => $request->razorpay_amount,
+                'currency' => 'INR',
+            ]);
+
             // Send confirmation email to user
-            $response1 = Mail::to($validatedData['email'])->send(new \App\Mail\BookingConfirmation($booking));
-            // dd($validatedData, $booking, $response1);
+            $response1 = Mail::to($newBookingData['email'])->send(new \App\Mail\BookingConfirmation($booking));
+            // dd($newBookingData, $booking, $response1);
 
             // Send confirmation email to admin
             if(!empty(getSettings()) and (isset(getSettings()->email) and !empty(getSettings()->email))){
