@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 class FrontEndController extends Controller
 {
+
     /**
      * Description of your controller function.
      * @Route : home
