@@ -92,5 +92,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
 
     //
     Route::resource('home-page-carousel', HomePageCarouselController::class);
+    Route::post('home-page-carousel/update-status/{id}', [HomePageCarouselController::class, "updateStatus"])->name('home-page-carousel.update.status');
+    Route::get('home-page-carousel/show/display-order', [HomePageCarouselController::class, "changeDisplayOrder"])->name('home-page-carousel.display.order');
+    Route::post('home-page-carousel/update/display-order', [HomePageCarouselController::class, "updateDisplayOrder"])->name('home-page-carousel.update.display-order');
     // Add other admin routes here...
 });

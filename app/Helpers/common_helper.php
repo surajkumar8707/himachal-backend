@@ -27,6 +27,15 @@ if (!function_exists('getSocialMediaLink')) {
     }
 }
 
+if (!function_exists('deletePublicPathFiles')) {
+    function deletePublicPathFiles($path){
+        // Delete the image file from the public/uploads directory
+        if (file_exists($path)) {
+            unlink($path);
+        }
+    }
+}
+
 /**
  * Generate a URL for an asset using the public directory.
  *

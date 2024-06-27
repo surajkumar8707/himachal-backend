@@ -28,8 +28,7 @@
 
                 <h2 class="text-left">Cancellation Policy:</h2>
                 <ul>
-                    <li>Cancellation policies vary depending on the rate and room type booked. Guests are advised to check
-                        the cancellation policy at the time of booking.</li>
+                    <li>Cancellation must be 72 hours prior to the date of arrivals . Deposits will not be refunded if booking is cancelled in less then 72 hours .</li>
                     <li>Late cancellations or no-shows may result in charges equivalent to one night's stay.</li>
                 </ul>
 

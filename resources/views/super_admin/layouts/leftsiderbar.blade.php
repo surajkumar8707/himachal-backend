@@ -26,6 +26,12 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link @active(['admin.home-page-carousel.index', 'admin.home-page-carousel.create', 'admin.home-page-carousel.edit', 'admin.home-page-carousel.show']) active @endactive" href="{{ route('admin.home-page-carousel.index') }}">
+                <i class="fas fa-fw fa-address-book"></i>
+                <span>Home Page Carousel</span></a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link @active(['admin.social.media.show', 'admin.social.media.create', 'admin.social.media.storeOrUpdate']) active @endactive" href="{{ route('admin.social.media.show') }}">
                 <i class="fas fa-fw fa-share-alt"></i>
                 <span>Social Media</span></a>

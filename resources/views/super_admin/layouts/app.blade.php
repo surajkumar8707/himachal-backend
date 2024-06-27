@@ -89,7 +89,7 @@
             }
         }
     </style>
-     @stack('style')
+    @stack('style')
 
 </head>
 
@@ -138,6 +138,71 @@
     <!-- ./wrapper -->
     <!-- jQuery -->
     <script src="{{ public_asset('assets/super_admin/plugins/jquery/jquery.min.js') }}"></script>
+    <!-- jQuery UI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        const APP_URL = "{{ config('app.url') }}";
+        const BASE_URL = "{{ url('') }}";
+
+        class FileSizeValidator {
+            constructor(fileInputSelector, maxSize) {
+                this.fileInput = $(fileInputSelector);
+                this.maxSize = maxSize;
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                const _this = this;
+                this.fileInput.change(function() {
+                    _this.validateFileSize(this);
+                });
+            }
+
+            validateFileSize(input) {
+                const fileSize = input.files[0].size;
+                if (fileSize > this.maxSize) {
+                    alert(`File size exceeds ${this.maxSize / (1024 * 1024)}MB limit.`);
+                    // Optionally clear the file input to prevent submission
+                    // $(input).val('');
+                }
+            }
+        }
+
+        $(".selectImgToRender").change(function(e) {
+            var $input = $(this); // Store the input element in a variable
+            var $input_id = "#" + $(this).attr('id');
+
+            var fileSize = $input[0].files[0].size; // File size in bytes
+            var maxSize = $input.data('max-size'); // Maximum size allowed from data-max-size attribute
+
+            if (fileSize > maxSize) {
+                toastr.error('File size exceeds 2MB limit.', 'Error!')
+                $input.addClass('is-invalid');
+                $input.removeClass('is-valid');
+                event.preventDefault(); // Prevent form submission
+                return false;
+            } else {
+                $input.removeClass('is-invalid');
+                $input.addClass('is-valid');
+            }
+            var $existingImage = $input.next("img"); // Check if an image already exists after the input
+
+            // If an image exists, remove it
+            if ($existingImage.length) {
+                $existingImage.remove();
+            }
+
+            $.each(e.target.files, function(index, file) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    $('.imgRenderContainer').attr('src', event.target
+                        .result).parent().show().addClass('my-3'); // Set the src attribute of the image
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
 
     {{-- toaster --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -159,6 +224,7 @@
 
     <!-- AdminLTE for demo purposes -->
     <script src="{{ public_asset('assets/super_admin/js/demo.js') }}"></script>
+
     @stack('script')
 
     @include('super_admin.layouts.alert-message')

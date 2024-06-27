@@ -15,38 +15,42 @@ class HomePageCarouselSeeder extends Seeder
     {
         $default_carousels = array(
             [
-                'title' => 'Home Page',
-                'image' => "uploads/home_page_carousel/1.jpeg",
+                'title' => 'Home Page 1',
+                'image' => "uploads/home_page_carousel/1.jpg",
                 'status' => 1,
+                'is_default' => 1,
+                'display_order' => 1,
             ],
 
             [
-                'title' => 'Home Page',
+                'title' => 'Home Page 2',
                 'image' => "uploads/home_page_carousel/2.jpeg",
                 'status' => 1,
+                'is_default' => 1,
+                'display_order' => 2,
             ],
 
             [
-                'title' => 'Home Page',
+                'title' => 'Home Page 3',
                 'image' => "uploads/home_page_carousel/3.jpeg",
                 'status' => 1,
+                'is_default' => 1,
+                'display_order' => 3,
             ],
 
             [
-                'title' => 'Home Page',
+                'title' => 'Home Page 4',
                 'image' => "uploads/home_page_carousel/4.jpeg",
                 'status' => 1,
+                'is_default' => 1,
+                'display_order' => 4,
             ],
 
         );
 
         if(count($default_carousels) > 0){
             foreach($default_carousels as $carousel){
-                HomePageCarousel::create(array(
-                    'title' => $carousel['title'],
-                    'image' => $carousel['image'],
-                    'status' => $carousel['status'],
-                ));
+                HomePageCarousel::create($carousel);
             }
         }
     }

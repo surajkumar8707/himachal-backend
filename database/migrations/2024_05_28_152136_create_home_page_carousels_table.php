@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('image');
             $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('is_default')->default(0);
+            $table->unsignedBigInteger('display_order')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
